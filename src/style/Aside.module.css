@@ -16,23 +16,19 @@
   border-radius: 50%;
 }
 .aside {
-  margin-left: 1rem;
-  margin-top: 1rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2rem;
-  width: 276px;
-  height: 970px;
-  background: rgb(255, 254, 254);
-  background: radial-gradient(
-    circle,
-    rgba(255, 254, 254, 1) 2%,
-    rgba(119, 119, 119, 0.7357317927170868) 98%,
-    rgba(128, 128, 128, 1) 100%
-  );
+  position: absolute;
+width: 276px;
+height: 900px;
+left: 0px;
+top: 0px;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 3rem;
+/* SideBarClaro */
+background: linear-gradient(180deg, #E3E3E3 10.5%, #ACA9B8 100%);
+border-radius: 42px;
+
   -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.75);
   box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.75);
@@ -85,6 +81,10 @@
     background: rgb(194,239,255);
 background: radial-gradient(circle, rgba(194,239,255,1) 2%, rgba(61,150,181,1) 56%, rgba(47,115,139,1) 100%);
 }
+
+  /* Rectangle 2 */
+
+
 
 @media(max-width:820px){
     .aside{
