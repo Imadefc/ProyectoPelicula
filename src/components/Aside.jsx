@@ -8,7 +8,7 @@ function Aside() {
     }
 
   return (
-    <div>
+    <div className={style.divContenedor}>
       <aside className={style.aside}>
         <img
           className={style.img}

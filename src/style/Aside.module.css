@@ -18,9 +18,9 @@
 .aside {
   position: absolute;
 width: 276px;
-height: 900px;
-left: 0px;
-top: 0px;
+height: 880px;
+left: 20px;
+top: 20px;
 display: flex;
 flex-direction: column;
 align-items: center;
