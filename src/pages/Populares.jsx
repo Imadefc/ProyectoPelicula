@@ -29,7 +29,7 @@ function Populares() {
     <h1 className={style.tituloPopulares}>Titulos Populares</h1>
         <article className={style.contenedor}>
         
-        {datos.map((el) => {
+        {datos &&datos.map((el) => {
           return (
             <CardPelicula
               key={el.id}

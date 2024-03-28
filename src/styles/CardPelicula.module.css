@@ -81,6 +81,10 @@
     bottom: -500px;
     color: #FFFF;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     text-align: center;
     left: 0;
@@ -91,12 +95,25 @@
     margin-top: 2rem;
 }
 .puntuacionBaja{
+    border-radius: 1rem;
+    padding: 0.5rem;
+    width: fit-content;
+    background-color: black;
     color: red;
 }
 .puntuacionMedia{
+    border-radius: 1rem;
+    padding: 0.5rem;
+    width: fit-content;
+    background-color: black;
     color:yellow;
 }
 .puntuacionAlta{
+    
+    border-radius: 1rem;
+    padding: 0.5rem;
+    width: fit-content;
+    background-color: black;
     color: lightgreen;
 }
 .article .contenedorInformacion h3{

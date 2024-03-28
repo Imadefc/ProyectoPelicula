@@ -1,0 +1,97 @@
+.ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-top: 90px;
+}
+.ul li {
+  cursor: pointer;
+  font-size: 50px;
+}
+.ul li:hover {
+  text-decoration: underline;
+}
+.img {
+  border-radius: 50%;
+}
+.aside {
+  position: fixed;
+width: 276px;
+height: 880px;
+left: 20px;
+top: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 3rem;
+background: linear-gradient(180deg, #50C4ED 0%, rgba(56, 122, 223, 0.85) 46.5%, #50C4ED 97%);
+border-radius: 42px;
+
+
+  -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.75);
+}
+.asideMovil{
+    display: none;
+    width: calc(100% - 3rem);
+    margin: 1rem;
+    background: rgb(182,225,241);
+    background: radial-gradient(circle, rgba(182,225,241,1) 2%, rgba(80,196,237,1) 56%, rgba(80,196,237,1) 100%);
+    border-radius: 2rem;
+}
+.asideMovil img{
+    width: 33px;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+.asideMovil h3{
+    margin-right: 2rem;
+}
+.contenedor{
+    list-style: none;
+    display: flex;
+    width: 85%;
+    border-radius: 2rem;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 1rem;
+    background: rgb(182,225,241);
+    background: radial-gradient(circle, rgba(182,225,241,1) 2%, rgba(80,196,237,1) 56%, rgba(80,196,237,1) 100%);
+}
+.contenedor li{
+    text-align: right;
+    width: 90%;
+    margin-right: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.3s;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.contenedor li:first-child{
+    margin-top: 1rem;
+}
+.contenedor li:last-child{
+    margin-bottom: 1rem;
+}
+
+.contenedor li:hover{
+    background: rgb(194,239,255);
+background: radial-gradient(circle, rgba(194,239,255,1) 2%, rgba(61,150,181,1) 56%, rgba(47,115,139,1) 100%);
+}
+
+  /* Rectangle 2 */
+
+
+
+@media(max-width:820px){
+    .aside{
+        display: none;
+    }
+    .asideMovil{
+        display: flex;
+        justify-content: space-between;
+    }
+}
