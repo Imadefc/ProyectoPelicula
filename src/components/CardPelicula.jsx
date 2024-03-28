@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import style from "../styles/CardPelicula.module.css";
+import style from "../style/CardPelicula.module.css";
 
-function CardPelicula({ img, title, descrp }) {
+export function CardPelicula({ year ,img, title, descrp }) {
   const [control, setControl] = useState(true);
 
   function handleControl() {
@@ -14,17 +14,23 @@ function CardPelicula({ img, title, descrp }) {
         <img
           onClick={handleControl}
           className={style.img}
-          src={img}
+          src={"https://image.tmdb.org/t/p/w600_and_h900_bestv2"+img}
           alt={title}
         />
       </div>
 
       <div onClick={handleControl} className={style.contenedorInformacion}>
-        <h2 className={style.h2}>{title}</h2>
-        <h3 className={style.h3}>{descrp}</h3>
+        <h2 className={style.h2}>{title+" ( "+year.substr(0,4)+" )"}</h2>
+        <p className={style.h3}>{descrp}</p>
+      </div>
+      <div className={style.botonVisto}>
+          <p>Visto</p>
+      </div>
+      <div className={style.botonMasTarde}>
+          <p>Ver Mas Tarde</p>
       </div>
     </article>
   );
 }
 
-export default CardPelicula;
+

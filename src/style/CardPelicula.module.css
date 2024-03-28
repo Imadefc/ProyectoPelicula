@@ -38,15 +38,64 @@
 }
 .article .contenedorInformacion{
     position: absolute;
-    width: 300px;
+    width: 100%;
     bottom: -180px;
     color: #FFFF;
     z-index: 2;
     text-align: center;
     left: 0;
-    padding-left: 20px;
     transition: 0.5s;
 }
+.contenedorInformacion p{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    width: 80%;
+}
 .article:hover .contenedorInformacion{
+    bottom: 100px;
+}
+.article .botonVisto{
+    position: absolute;
+    height: 50px;
+    cursor: pointer;
+    width: 50%;
+    bottom: -180px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    transition: 0.5s;
+    background: linear-gradient(180deg, #E3E3E3 10.5%, #ACA9B8 100%);
+
+}
+.article .botonMasTarde{
+    position: absolute;
+    height: 50px;
+    cursor: pointer;
+    width: 50%;
+    bottom: -180px;
+    left: 50%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    transition: 0.5s;
+    align-items: center;
+    background: linear-gradient(180deg, #E3E3E3 10.5%, #ACA9B8 100%);
+
+
+}
+.article:hover .botonMasTarde {
     bottom: 0;
+}
+.article:hover .botonVisto {
+    bottom: 0;
+}
+.botonMasTarde:hover{
+    background:linear-gradient(180deg, #E3E3E3 10.5%, #696969 100%); ;
+}
+.botonVisto:hover{
+    background:linear-gradient(180deg, #E3E3E3 10.5%, #696969 100%); ;
 }
