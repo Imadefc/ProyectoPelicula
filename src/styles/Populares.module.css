@@ -1,0 +1,17 @@
+.contenedor{
+    display: grid;
+    position: relative;
+    top: 334px;
+    left: 320px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    width: fit-content;
+    gap: 24px;
+
+}
+.tituloPopulares{
+    position: relative;
+    top: 154px ;
+    left: 850px;
+    font-size: 54px;
+}

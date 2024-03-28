@@ -78,7 +78,7 @@
 .article .contenedorInformacion{
     position: absolute;
     width: 300px;
-    bottom: -180px;
+    bottom: -500px;
     color: #FFFF;
     z-index: 2;
     width: 100%;
