@@ -7,7 +7,7 @@
     height: 100px;
     position: relative;
     left: 500px;
-    top: 259px;
+    top: 50px;
     font-size:50px ;
     border: transparent;
     border-bottom: solid 1px #ccc;
@@ -48,5 +48,5 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 15px ;
     left: 350px;
-    top: 500px;
+    top: 200px;
 }
