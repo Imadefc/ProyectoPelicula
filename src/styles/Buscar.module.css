@@ -50,3 +50,25 @@
     left: 350px;
     top: 200px;
 }
+
+@media (max-width: 820px) {
+    .Buscador{
+        left: 5%;
+        width: 90%;
+    }
+    .contenedor{
+        width: 100%;
+        grid-template-columns: repeat(20, 1fr);
+        overflow-x: hidden;
+        gap: 800px;
+        left: 30%;
+    }
+    .botonIzquierda{
+        display: relative;
+        transform: rotateY(180deg);
+        left: 0;
+        top: 50%;
+        width: fit-content;
+    }
+  }
+  

@@ -98,6 +98,7 @@ function Buscar() {
               <CardPelicula
                 puntuacion={el.vote_average}
                 key={el.id}
+                year={el.release_date}
                 img={el.poster_path}
                 descrp={el.overview}
                 title={el.title}
@@ -111,7 +112,15 @@ function Buscar() {
             <a onClick={handleSiguiente}>Siguiente</a>
           </div>
         )}
+        
       </article>
+
+      <div className={style.botonIzquierda}>
+          <img width={"100px"} src="https://i.ibb.co/6RFv4TC/flecha-correcta.png"/>
+        </div>
+        <div className={style.botonDerecha}>
+          <img width={"100px"} src="https://i.ibb.co/6RFv4TC/flecha-correcta.png"/>
+        </div>
     </>
   );
 }

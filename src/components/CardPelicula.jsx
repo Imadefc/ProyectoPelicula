@@ -12,12 +12,23 @@ function CardPelicula({puntuacion ,year="NotF", img, title, descrp }) {
   return (
     <article className={style.article}>
       <div className={style.poster}>
-        <img
+        {img==null &&
+          <img
+          onClick={handleControl}
+          className={style.img}
+          src={"https://i0.wp.com/capri.org.au/wp-content/uploads/2017/10/poster-placeholder.jpg?ssl=1"}
+          alt={title}
+        />
+         }
+         {img!=null &&
+          <img
           onClick={handleControl}
           className={style.img}
           src={"https://image.tmdb.org/t/p/w600_and_h900_bestv2"+img}
           alt={title}
         />
+         }
+        
       </div>
 
       <div onClick={handleControl} className={style.contenedorInformacion}>
