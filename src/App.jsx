@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Aside from './components/Aside'
+import Listas from './pages/Listas'
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
      <Aside/> 
+     <Listas/>
     </>
   )
 }
