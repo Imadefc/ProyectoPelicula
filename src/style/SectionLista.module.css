@@ -9,3 +9,10 @@
     margin-bottom:3rem;
     font-size:40px;
 }
+
+@media(max-width:820px){
+    .contenedor{
+        grid-template-columns:1fr;
+        width:fit-content;
+    }
+}

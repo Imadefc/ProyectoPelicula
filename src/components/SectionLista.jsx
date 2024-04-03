@@ -2,15 +2,16 @@ import style from "../style/SectionLista.module.css";
 import "react-slideshow-image/dist/styles.css";
 import CardPelicula from "../components/CardPelicula";
 
-function SectionLista({setArray,botonIzq,botonDer, title = "NotF", array= null }) {
+function SectionLista({arrayContr,setArrayContr,setArray,botonIzq,botonDer, title = "NotF", array= null }) {
   return (
     <>
       <h3 className={style.titulo}>{title}</h3>
       <section className={style.contenedor}>
-        { array!=[] && array && array.map((el, i) => {
+        { array!=[] && array && array.map((el) => {
           return (
             <CardPelicula
               array={array}
+              setArrayContr={setArrayContr}
               setArray={setArray}
               name={el.id}
               key={el.id}
@@ -21,6 +22,7 @@ function SectionLista({setArray,botonIzq,botonDer, title = "NotF", array= null }
               puntuacion={el.vote_average}
               botonIzq={botonIzq}
               botonDer={botonDer}
+              arrayContr={arrayContr}
             />
           );
         })}

@@ -2,11 +2,35 @@ import { useState } from "react";
 import style from "../style/CardPelicula.module.css";
 import Votacion from "./Votacion";
 
-function CardPelicula({name,array,setArray, botonIzq,handleBotonIzq,botonDer, handleBotonDer,puntuacion ,year="NotF", img, title, descrp }) {
+function CardPelicula({ arrayContr,setArrayContr,name,array,setArray, botonIzq,botonDer,andleBotonDer,puntuacion ,year="NotF", img, title, descrp }) {
   const [control, setControl] = useState(true);
 
   function handleControl() {
     setControl(!control);
+  }
+  function handleBotonDer(event) {
+    const id= event.currentTarget.id;
+    const obj=array.filter((el)=>{
+      return id==el.id
+    })
+    setArrayContr((prev)=>{
+      if(prev==null){
+        return obj
+      }else{
+        for(let i=0; i<arrayContr.length;i++){
+          if(arrayContr[i].id==id){
+            return prev
+          }
+        }
+        return [...prev, ...obj]
+        
+        
+      }
+    })
+    const aux = array.filter((el)=>{
+      return id != el.id
+    })
+    setArray(aux)
   }
   function handleBotonIzq(event) {
     const id= event.currentTarget.id;
@@ -38,7 +62,7 @@ function CardPelicula({name,array,setArray, botonIzq,handleBotonIzq,botonDer, ha
       <div id={name} onClick={handleBotonIzq} className={style.bottonVisto}>
         <p>{botonIzq}</p>
       </div>
-      <div onClick={handleBotonDer} className={style.bottonMasTarde}>
+      <div id={name} onClick={handleBotonDer} className={style.bottonMasTarde}>
         <p>{botonDer}</p>
       </div>
     </article>
