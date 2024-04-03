@@ -15,27 +15,33 @@ function Buscar() {
   const [datos, setDatos] = useState(null);
   const [busqueda, setBusqueda] = useState("");
   const [tituloGuardado, setTituloGuardado] = useState("");
+  const [numRes, setNumRes]= useState(null)
   const [page, setPage] = useState({ page: null, pageMax: null });
+
+  function handlebuscar(){
+    fetch(
+      "https://api.themoviedb.org/3/search/movie?key=" +
+        import.meta.VITE_API_KEY +
+        "&query=" +
+        busqueda +
+        "&include_adult=false&language=es-US&page=1",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        setDatos(response.results);
+        setTituloGuardado(busqueda);
+        setPage({ page: response.page, pageMax: response.total_pages });
+        console.log(datos);
+        setNumRes(response.total_results);
+      })
+      .catch((err) => console.error(err));
+    setBusqueda("");
+  }
   function handleEnter(event) {
     if (event.code === "Enter") {
-      fetch(
-        "https://api.themoviedb.org/3/search/movie?key=" +
-          import.meta.VITE_API_KEY +
-          "&query=" +
-          busqueda +
-          "&include_adult=false&language=es-US&page=1",
-        options
-      )
-        .then((response) => response.json())
-        .then((response) => {
-          console.log(response);
-          setDatos(response.results);
-          setTituloGuardado(busqueda);
-          setPage({ page: response.page, pageMax: response.total_pages });
-          console.log(datos);
-        })
-        .catch((err) => console.error(err));
-      setBusqueda("");
+      handlebuscar();
     }
   }
 
@@ -90,7 +96,8 @@ function Buscar() {
           className={style.Buscador}
         />
       </div>
-      
+      <img onClick={handlebuscar}  className={style.icono} width={"100px"} src="https://i.ibb.co/1dPp0wr/imagen-2024-04-04-011057169.png"/>
+      {numRes && <h3 className={style.numRes}>Hay {numRes} elementos encontrados </h3>}
       <article className={style.contenedor}>
         {datos &&
           datos.map((el) => {
@@ -105,7 +112,7 @@ function Buscar() {
               />
             );
           })}
-        {page.page && (
+        {datos && (
           <div className={style.page}>
             <a onClick={handleAnterior}>Anterior</a>
             <p>{page.page}</p>
@@ -115,12 +122,6 @@ function Buscar() {
         
       </article>
 
-      <div className={style.botonIzquierda}>
-          <img width={"100px"} src="https://i.ibb.co/6RFv4TC/flecha-correcta.png"/>
-        </div>
-        <div className={style.botonDerecha}>
-          <img width={"100px"} src="https://i.ibb.co/6RFv4TC/flecha-correcta.png"/>
-        </div>
     </>
   );
 }
