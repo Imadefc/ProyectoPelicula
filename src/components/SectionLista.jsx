@@ -1,14 +1,32 @@
-import React from 'react'
+import style from "../style/SectionLista.module.css";
+import "react-slideshow-image/dist/styles.css";
+import CardPelicula from "../components/CardPelicula";
 
-function SectionLista({titulo, array=[]}) {
+function SectionLista({setArray,botonIzq,botonDer, title = "NotF", array= null }) {
   return (
-    <section>
-        <h2>{titulo}</h2>
-        {array==[]?<h3>No has Guardado nada</h3>: array.map((el)=>{
-          
-        }) }
-    </section>
-  )
+    <>
+      <h3 className={style.titulo}>{title}</h3>
+      <section className={style.contenedor}>
+        { array!=[] && array && array.map((el, i) => {
+          return (
+            <CardPelicula
+              array={array}
+              setArray={setArray}
+              name={el.id}
+              key={el.id}
+              descrp={el.overview}
+              img={el.poster_path}
+              year={el.release_date}
+              title={el.title}
+              puntuacion={el.vote_average}
+              botonIzq={botonIzq}
+              botonDer={botonDer}
+            />
+          );
+        })}
+      </section>
+    </>
+  );
 }
 
-export default SectionLista
+export default SectionLista;
