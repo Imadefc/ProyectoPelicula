@@ -4,7 +4,7 @@
 /* Cinesearch */
 
 position: absolute;
-width: 329px;
+width: 350px;
 height: 126px;
 left: 31px;
 top: 33px;
@@ -29,11 +29,18 @@ text-fill-color: transparent;
   left: 31px;
   top: 300px;
   font-size: 48px;
+
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings:
     "slnt" 0;
+}
+.opciones h3{
+  cursor: pointer;
+}
+.opciones h3:hover{
+  text-decoration: underline;
 }
 
 

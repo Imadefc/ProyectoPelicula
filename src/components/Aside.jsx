@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "../style/Aside.module.css";
+import style from "../styles/Aside.module.css";
 
 function Aside() {
   const [control, setControl] = useState(false);
