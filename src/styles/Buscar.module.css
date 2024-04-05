@@ -23,6 +23,7 @@
     left: 1420px;
     width:90px;
     bottom:45px;
+    cursor: pointer;
 }
 .page{
     position: absolute;
@@ -57,9 +58,13 @@
     left: 350px;
     top: 200px;
 }
+body{
+    overflow-x:hidden;
+}
 .numRes{
     position: relative;
     left:350px;
+    width:fit-content;
     font-size:40px;
     top:180px;
 }
@@ -88,6 +93,9 @@
         left: 0;
         top: 50%;
         width: fit-content;
+    }
+    .icono{
+        left:600px;
     }
   }
   

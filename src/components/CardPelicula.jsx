@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "../styles/CardPelicula.module.css";
 import Votacion from "./Votacion";
 
-function CardPelicula({puntuacion ,year="NotF", img, title, descrp }) {
+function CardPelicula({handleBotonIzq,handleBotonDer,puntuacion ,year="NotF", img, title, descrp }) {
   const [control, setControl] = useState(true);
 
   function handleControl() {
@@ -37,10 +37,10 @@ function CardPelicula({puntuacion ,year="NotF", img, title, descrp }) {
         <Votacion puntuacion={puntuacion} />
         
       </div>
-      <div className={style.bottonVisto}>
+      <div onClick={handleBotonIzq} className={style.bottonVisto}>
         <p>Visto</p>
       </div>
-      <div className={style.bottonMasTarde}>
+      <div onClick={handleBotonDer} className={style.bottonMasTarde}>
         <p>Mas Tarde</p>
       </div>
     </article>
