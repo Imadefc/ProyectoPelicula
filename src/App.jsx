@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Aside from './components/Aside'
+import { Routes } from 'react-router'
 
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
 
   return (
     <>
-      <Aside/>
+      <Routes>
+      </Routes>
     </>
   )
 }
