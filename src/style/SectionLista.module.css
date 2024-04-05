@@ -1,0 +1,18 @@
+.contenedor{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+    width:fit-content;
+}
+.titulo {
+    margin-top:6rem;
+    margin-bottom:3rem;
+    font-size:40px;
+}
+
+@media(max-width:820px){
+    .contenedor{
+        grid-template-columns:1fr;
+        width:fit-content;
+    }
+}

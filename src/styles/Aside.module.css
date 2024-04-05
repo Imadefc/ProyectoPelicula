@@ -25,10 +25,13 @@ text-fill-color: transparent;
 
 }
 .opciones{
-  position: relative;
+  position: absolute;
   left: 31px;
   top: 300px;
   font-size: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;

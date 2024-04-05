@@ -1,0 +1,16 @@
+.contenedor{
+    position: relative;
+    left: 400px;
+    top: 100px;
+    width: 100%;
+}
+.nohay{
+    font-size: 50px;
+    margin-bottom:10rem;
+}
+
+@media(max-width:820px){
+    .contenedor{
+        left:40px;
+    }
+}
