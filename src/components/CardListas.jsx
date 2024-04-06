@@ -2,7 +2,7 @@ import { useState } from "react";
 import style from "../style/CardPelicula.module.css";
 import Votacion from "./Votacion";
 
-function CardLista({ arrayContr,setArrayContr,name,array,setArray, botonIzq,botonDer,andleBotonDer,puntuacion ,year="NotF", img, title, descrp }) {
+function CardLista({name, arrayContr,setArrayContr,id,array,setArray, botonIzq,botonDer,andleBotonDer,puntuacion ,year="NotF", img, title, descrp }) {
   const [control, setControl] = useState(true);
 
   function handleControl() {
@@ -34,23 +34,35 @@ function CardLista({ arrayContr,setArrayContr,name,array,setArray, botonIzq,boto
   }
   function handleBotonIzq(event) {
     const id= event.currentTarget.id;
+    eliminarContenido(id)
+    console.log(event.currentTarget.name);
+  }
+  function eliminarContenido(id){
     const nuevoArray=array.filter((el)=>{
       return id!=el.id;
     })
     setArray(nuevoArray)
-    console.log(nuevoArray);
-    console.log(id);
   }
 
   return (
     <article className={style.article} id={name}>
       <div className={style.poster}>
-        <img
+      {img==null &&
+          <img
+          onClick={handleControl}
+          className={style.img}
+          src={"https://i0.wp.com/capri.org.au/wp-content/uploads/2017/10/poster-placeholder.jpg?ssl=1"}
+          alt={title}
+        />
+         }
+         {img!=null &&
+          <img
           onClick={handleControl}
           className={style.img}
           src={"https://image.tmdb.org/t/p/w600_and_h900_bestv2"+img}
           alt={title}
         />
+         }
       </div>
 
       <div onClick={handleControl} className={style.contenedorInformacion}>
@@ -59,10 +71,10 @@ function CardLista({ arrayContr,setArrayContr,name,array,setArray, botonIzq,boto
         <Votacion puntuacion={puntuacion} />
         
       </div>
-      <div id={name} onClick={handleBotonIzq} className={style.bottonVisto}>
+      <div id={id} onClick={handleBotonIzq} className={style.bottonVisto}>
         <p>{botonIzq}</p>
       </div>
-      <div id={name} onClick={handleBotonDer} className={style.bottonMasTarde}>
+      <div  id={id} onClick={handleBotonDer} className={style.bottonMasTarde}>
         <p>{botonDer}</p>
       </div>
     </article>

@@ -4,11 +4,11 @@
     color: black;
     background-size: 24px;
     width: 1050px;
-    height: 100px;
+    height: 61px;
     position: relative;
     left: 500px;
     top: 50px;
-    font-size:50px ;
+    font-size:30px ;
     border: transparent;
     border-bottom: solid 1px #ccc;
     padding: 10px 10px 10px 30px;
@@ -20,9 +20,9 @@
 }
 .icono{
     position: relative;
-    left: 1420px;
-    width:90px;
-    bottom:45px;
+    left: 1480px;
+    width:50px;
+    bottom:5px;
     cursor: pointer;
 }
 .page{
@@ -56,7 +56,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 15px ;
     left: 350px;
-    top: 200px;
+    top: 150px;
 }
 body{
     overflow-x:hidden;
@@ -66,7 +66,7 @@ body{
     left:350px;
     width:fit-content;
     font-size:40px;
-    top:180px;
+    top:130px;
 }
 
 @media (max-width: 820px) {

@@ -1,7 +1,7 @@
 import style from "../style/SectionLista.module.css";
 import CardLista from '../components/CardListas';
 
-function SectionLista({arrayContr,setArrayContr,setArray,botonIzq,botonDer, title = "NotF", array= null }) {
+function SectionLista({name,arrayContr,setArrayContr,setArray,botonIzq,botonDer, title = "NotF", array= null }) {
   return (
     <>
       <h3 className={style.titulo}>{title}</h3>
@@ -12,7 +12,7 @@ function SectionLista({arrayContr,setArrayContr,setArray,botonIzq,botonDer, titl
               array={array}
               setArrayContr={setArrayContr}
               setArray={setArray}
-              name={el.id}
+              id={el.id}
               key={el.id}
               descrp={el.overview}
               img={el.poster_path}
@@ -21,6 +21,7 @@ function SectionLista({arrayContr,setArrayContr,setArray,botonIzq,botonDer, titl
               puntuacion={el.vote_average}
               botonIzq={botonIzq}
               botonDer={botonDer}
+              name={name}
               arrayContr={arrayContr}
             />
           );
