@@ -1,5 +1,5 @@
-
-import style from '../style/CardPelicula.module.css'
+import React from 'react'
+import style from '../styles/CardPelicula.module.css'
 
 function Votacion({puntuacion}) {
   return (

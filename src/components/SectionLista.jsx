@@ -1,5 +1,5 @@
 import style from "../style/SectionLista.module.css";
-import CardPelicula from "../components/CardPelicula";
+import CardLista from '../components/CardListas';
 
 function SectionLista({arrayContr,setArrayContr,setArray,botonIzq,botonDer, title = "NotF", array= null }) {
   return (
@@ -8,7 +8,7 @@ function SectionLista({arrayContr,setArrayContr,setArray,botonIzq,botonDer, titl
       <section className={style.contenedor}>
         { array!=[] && array && array.map((el) => {
           return (
-            <CardPelicula
+            <CardLista
               array={array}
               setArrayContr={setArrayContr}
               setArray={setArray}

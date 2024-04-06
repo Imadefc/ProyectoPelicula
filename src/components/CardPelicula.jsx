@@ -1,56 +1,34 @@
-import { useState } from "react";
-import style from "../style/CardPelicula.module.css";
+import React, { useState } from "react";
+import style from "../styles/CardPelicula.module.css";
 import Votacion from "./Votacion";
 
-function CardPelicula({ arrayContr,setArrayContr,name,array,setArray, botonIzq,botonDer,andleBotonDer,puntuacion ,year="NotF", img, title, descrp }) {
+function CardPelicula({handleBotonIzq,handleBotonDer,puntuacion ,year="NotF", img, title, descrp }) {
   const [control, setControl] = useState(true);
 
   function handleControl() {
     setControl(!control);
   }
-  function handleBotonDer(event) {
-    const id= event.currentTarget.id;
-    const obj=array.filter((el)=>{
-      return id==el.id
-    })
-    setArrayContr((prev)=>{
-      if(prev==null){
-        return obj
-      }else{
-        for(let i=0; i<arrayContr.length;i++){
-          if(arrayContr[i].id==id){
-            return prev
-          }
-        }
-        return [...prev, ...obj]
-        
-        
-      }
-    })
-    const aux = array.filter((el)=>{
-      return id != el.id
-    })
-    setArray(aux)
-  }
-  function handleBotonIzq(event) {
-    const id= event.currentTarget.id;
-    const nuevoArray=array.filter((el)=>{
-      return id!=el.id;
-    })
-    setArray(nuevoArray)
-    console.log(nuevoArray);
-    console.log(id);
-  }
 
   return (
-    <article className={style.article} id={name}>
+    <article className={style.article}>
       <div className={style.poster}>
-        <img
+        {img==null &&
+          <img
+          onClick={handleControl}
+          className={style.img}
+          src={"https://i0.wp.com/capri.org.au/wp-content/uploads/2017/10/poster-placeholder.jpg?ssl=1"}
+          alt={title}
+        />
+         }
+         {img!=null &&
+          <img
           onClick={handleControl}
           className={style.img}
           src={"https://image.tmdb.org/t/p/w600_and_h900_bestv2"+img}
           alt={title}
         />
+         }
+        
       </div>
 
       <div onClick={handleControl} className={style.contenedorInformacion}>
@@ -59,11 +37,11 @@ function CardPelicula({ arrayContr,setArrayContr,name,array,setArray, botonIzq,b
         <Votacion puntuacion={puntuacion} />
         
       </div>
-      <div id={name} onClick={handleBotonIzq} className={style.bottonVisto}>
-        <p>{botonIzq}</p>
+      <div onClick={handleBotonIzq} className={style.bottonVisto}>
+        <p>Visto</p>
       </div>
-      <div id={name} onClick={handleBotonDer} className={style.bottonMasTarde}>
-        <p>{botonDer}</p>
+      <div onClick={handleBotonDer} className={style.bottonMasTarde}>
+        <p>Mas Tarde</p>
       </div>
     </article>
   );

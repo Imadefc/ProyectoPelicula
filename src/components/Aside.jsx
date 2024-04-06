@@ -3,9 +3,6 @@ import style from "../styles/Aside.module.css";
 
 function Aside() {
   const [control, setControl] = useState(false);
-  function handleDropdown() {
-    setControl(!control);
-  }
 
   return (
     <aside className={style.contenedor}>
