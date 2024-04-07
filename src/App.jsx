@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import Aside from './components/Aside';
 import { Route, Routes } from 'react-router';
 import Listas from '../src/pages/Listas'
 import Buscar from './pages/Buscar';
