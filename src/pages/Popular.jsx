@@ -1,9 +1,10 @@
-import React from 'react'
+
 import Aside from '../components/Aside'
 
-import{ useEffect, useState } from "react";
+import{ useContext, useEffect, useState } from "react";
 import CardPelicula from "../components/CardPelicula";
 import style from "../styles/Populares.module.css"
+import { handleBotonAñadirVistoMastarde } from '../services/serviciosBotones';
 const options = {
   method: "GET",
   headers: {
@@ -16,14 +17,15 @@ const options = {
  function Popular() {
   const [datos, setDatos] = useState(null);
   useEffect(() => {
+    const URL ="https://api.themoviedb.org/3/trending/movie/day?key="+import.meta.VITE_API_KEY+"language=es-ES";
+    console.log(URL);
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
+      URL,
       options
     )
       .then((response) => response.json())
       .then((response) => {
         setDatos(response.results);
-        console.log(response.results);
       })
       .catch((err) => console.error(err));
   }, []);
@@ -31,7 +33,11 @@ const options = {
     <>
     <Aside/>
     <h1 className={style.tituloPopulares}>Titulos Populares</h1>
+
+  
+    
         <article className={style.contenedor}>
+        
         
         {datos &&datos.map((el) => {
           return (
@@ -42,6 +48,8 @@ const options = {
               descrp={el.overview}
               year={el.release_date}
               puntuacion={el.vote_average}
+              handleBotonDer={()=>handleBotonAñadirVistoMastarde("mastarde",el)}
+              handleBotonIzq={()=>handleBotonAñadirVistoMastarde("visto", el)}
             />
           );
         })}

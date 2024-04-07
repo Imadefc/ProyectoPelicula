@@ -2,6 +2,7 @@ import style from "../styles/Buscar.module.css";
 import CardPelicula from "../components/CardPelicula";
 import Aside from "../components/Aside";
 import { useState } from "react";
+import { handleBotonAñadirVistoMastarde } from "../services/serviciosBotones";
 
 const options = {
   method: "GET",
@@ -19,26 +20,7 @@ function Buscar() {
   const [numRes, setNumRes]= useState(null)
   const [page, setPage] = useState({ page: null, pageMax: null });
 
-  function handleBotonAñadirVistoMastarde(seccion,elemento) {
-    let bd=JSON.parse(localStorage.getItem(seccion));
-    if(bd){
-      const res=bd.filter((el=>{
-        return el.id==elemento.id
-      }))
-      
-      if(res.length!=0){
-        console.log("hay uno igual");
-      }else{
-        bd=[...bd,elemento]
-        localStorage.setItem(seccion,  JSON.stringify(bd))
-      }
-      
-    }else{
-      console.log([elemento])
-      localStorage.setItem(seccion, JSON.stringify([elemento]))
-      
-    }
-  }
+  
 
   function handlebuscar(){
     fetch(

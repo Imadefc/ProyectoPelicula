@@ -1,21 +1,21 @@
-import { Route, Routes } from 'react-router';
-import Listas from '../src/pages/Listas'
-import Buscar from './pages/Buscar';
-import Popular from './pages/Popular';
-import Ajustes from './pages/Ajustes';
-function App() {
+import { Route, Routes } from "react-router";
+import Listas from "../src/pages/Listas";
+import Buscar from "./pages/Buscar";
+import Popular from "./pages/Popular";
+import Ajustes from "./pages/Ajustes";
+import { useState } from "react";
 
+function App() {
   return (
     <>
-
-      <Routes>
-        <Route path='listas' element={<Listas/>}/>
-        <Route path='popular' element={<Popular/>}/>
-        <Route path='ajustes' element={<Ajustes/>}/>
-        <Route path='/' element={<Buscar/>}/>
         
-      </Routes>
-
+        <Routes>
+        
+          <Route path="listas" element={<Listas />} />
+          <Route path="popular" element={<Popular />} />
+          <Route path="ajustes" element={<Ajustes />} />
+          <Route path="/" element={<Buscar />} />
+        </Routes>
     </>
   );
 }

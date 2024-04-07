@@ -1,18 +1,24 @@
 .contenedor{
     display: grid;
     position: relative;
-    top: 334px;
+    top: 200px;
     left: 328px;
     margin-left: 4rem;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(5,1fr);
     width: fit-content;
     gap: 15px;
+    padding-bottom: 4rem;
 
 }
 .tituloPopulares{
     position: relative;
-    top: 154px ;
+    top: 80px ;
     left: 850px;
     font-size: 54px;
+}
+.idioma{
+    position: absolute;
+    right: 200px;
+    top: 100px;
 }

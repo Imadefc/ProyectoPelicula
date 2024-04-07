@@ -27,12 +27,13 @@
     bottom: -180px;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0,#50C4ED,80%, transparent);
+    background: linear-gradient(0,#50C4ED,0%, transparent);
     transition:0.3s;
     z-index: 1;
 }
 .article:hover .poster::before{
     bottom: 0;
+    background: linear-gradient(0,#50C4ED,70%, transparent);
 }
 .bottonMasTarde, .bottonVisto{
     position: absolute;
