@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { opciones } from "./data/opciones";
+import { opcionesI } from "./data/opcionesI";
+import Opciones from "./Components/Opciones";
+import OpcionesI from "./Components/OpcionesI";  
+import OpcionesView from "./views/OpcionesView";
+import OpcionesIviews from "./views/OpcionesIviews";
+import {Routes, Route } from "react-router-dom";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <Routes> 
+      <Route path="*"  element= {<Home />} />
+      {opciones.map((opcion, index) => (
+        <Route key={index} path={"/" + opcion.name.toLowerCase()} element={<OpcionesView {...opcion} />} />
+      ))}
+      {opcionesI.map((opcionI, indexI) => (
+        <Route key={indexI} path={"/" + opcionI.nameI.toLowerCase()} element={<OpcionesIviews {...opcionI} />} />
+      ))}
+    </Routes>
     </>
-  )
+  );
 }
 
-export default App
+
+function Home() {
+  return (
+    <div>
+      <div className="footerContainer">
+        <div className="opcionesImagenes_footer">
+          {opcionesI.map((opcionI, index) => (
+            <OpcionesI key={index} {...opcionI} />
+          ))}
+        </div>
+       
+       <div className="opcionesTexto_footer">
+        {opciones.map((opcion, index) => (
+          <Opciones key={index} {...opcion} />
+        ))}
+       </div>
+       
+      </div>
+    </div>
+  );
+}
+
+
+
+export default App;

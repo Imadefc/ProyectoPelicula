@@ -1,0 +1,15 @@
+.link {
+    width: auto;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 48px;
+    white-space: nowrap;
+
+  }
+
+  .opcionesContainer {
+    background-color: rgba(17, 17, 57, 1);
+  }
