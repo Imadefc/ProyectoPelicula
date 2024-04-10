@@ -1,0 +1,22 @@
+.contenedor{
+    position: absolute;
+    left: 400px;
+    top: 200px;
+}
+.contenedorSection{
+    display: flex;
+    margin-top: 2rem;
+    font-size: 40px;
+    width:400px;
+    justify-content:space-between;
+    margin-bottom: 2rem;
+}
+.contenedor section h2{
+    margin-bottom: 2rem;
+
+    
+}
+.contenedor section select{
+    height: fit-content;
+    align-self: center;
+}
