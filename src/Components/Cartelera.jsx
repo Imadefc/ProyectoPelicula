@@ -63,10 +63,10 @@ function Cartelera() {
     <div className='contenedor_general_slider'>
     <div className='pantalla_cartelera'>
         <img className='cartelera_opcion_1' src={
-            indiceImagen === 1 ? "https://es.web.img2.acsta.net/pictures/14/07/09/10/00/277089.jpg" :
-            indiceImagen === 2 ?  "https://es.web.img3.acsta.net/pictures/13/12/04/16/18/394160.jpg":
-            indiceImagen === 3 ?  "https://marcialpons.es/media/img/portadas/9788408262336.jpg":
-            "https://m.media-amazon.com/images/M/MV5BMzI0NmVkMjEtYmY4MS00ZDMxLTlkZmEtMzU4MDQxYTMzMjU2XkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_.jpg" 
+            indiceImagen === 1 ? "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fmegxZBz7GF8k4eme4ZJXXGI0TO.jpg" :
+            indiceImagen === 2 ?  "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/40ollvfwHaVF85lkkg522SIl3Qc.jpg":
+            indiceImagen === 3 ?  "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/iacLPcp2o2pClRToPjNAZjGhxAK.jpg":
+            "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hB2VqiLDiHAyLdZ1dlXIGqDJy06.jpg" 
           } alt="" />
     </div>
 
@@ -76,10 +76,10 @@ function Cartelera() {
               key={index}
               className={`cartelera_opcion_${index}`}
               src={
-                index === 1 ? "https://es.web.img2.acsta.net/pictures/14/07/09/10/00/277089.jpg" :
-                index === 2 ? "https://es.web.img3.acsta.net/pictures/13/12/04/16/18/394160.jpg" :
-                index === 3 ? "https://marcialpons.es/media/img/portadas/9788408262336.jpg" :
-                "https://m.media-amazon.com/images/M/MV5BMzI0NmVkMjEtYmY4MS00ZDMxLTlkZmEtMzU4MDQxYTMzMjU2XkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_.jpg" 
+                index === 1 ? "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fmegxZBz7GF8k4eme4ZJXXGI0TO.jpg" :
+                index === 2 ? "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/40ollvfwHaVF85lkkg522SIl3Qc.jpg" :
+                index === 3 ? "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/iacLPcp2o2pClRToPjNAZjGhxAK.jpg" :
+                "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hB2VqiLDiHAyLdZ1dlXIGqDJy06.jpg" 
               }
               alt=""/>
           ))}

@@ -9,6 +9,8 @@
 }
 
 .slider_der{
+    width: 60px;
+    height: 50px;
     margin-left: 10px;
     align-items: center;
     text-align: center;
@@ -25,6 +27,8 @@
 }
 
 .slider_izq{
+    width: 60px;
+    height: 50px;
     margin-right: 10px;
     align-items: center;
     text-align: center;
