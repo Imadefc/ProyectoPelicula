@@ -9,8 +9,8 @@
    border-top: 1px solid lightgray;
    padding-top: 2rem;
    -webkit-box-shadow: 2px -8px 79px -40px rgba(0,0,0,0.75);
--moz-box-shadow: 2px -8px 79px -40px rgba(0,0,0,0.75);
-box-shadow: 2px -8px 79px -40px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px -8px 79px -40px rgba(0,0,0,0.75);
+    box-shadow: 2px -8px 79px -40px rgba(0,0,0,0.75);
 }
 .contenedorInterior{
     display: flex;
@@ -23,5 +23,10 @@ box-shadow: 2px -8px 79px -40px rgba(0,0,0,0.75);
     }
     .contenedorInterior{
         width: fit-content;
+    }
+}
+@media(max-width:700px){
+    .contenedorInterior{
+        flex-direction: column;
     }
 }

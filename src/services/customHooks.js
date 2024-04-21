@@ -98,3 +98,11 @@ function eliminarSiEstaEnElContrario(string,obj){
         localStorage.setItem("visto",aux);
     }
 }
+export function conseguirDatosPelicula(id,setDatos){
+  //https://api.themoviedb.org/3/keyword/dfdfds
+  fetch(
+    "https://api.themoviedb.org/3/keyword/"+id+"?key=" +
+      import.meta.VITE_API_KEY ,
+    options
+  ).then(el=>el.json()).then(res=>console.log(res)).catch(err => console.error(err));
+}
