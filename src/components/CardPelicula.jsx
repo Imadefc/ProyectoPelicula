@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import style from "../styles/CardPelicula.module.css";
 import Votacion from "./Votacion";
+import { Idcontext } from "../context/idcontext";
 
-function CardPelicula({handleBotonIzq,handleBotonDer,puntuacion ,year="NotF", img, title, descrp }) {
+function CardPelicula({handleBotonIzq,handleBotonDer,puntuacion ,year="NotF", img, title, descrp, id }) {
   const [control, setControl] = useState(true);
+
+  const { setSelectedMovie } = useContext(Idcontext)
+
+  function onClick (){
+    setSelectedMovie ( id )
+  }
+
 
   function handleControl() {
     setControl(!control);
   }
 
   return (
-    <article className={style.article}>
+    <article onClick={onClick} className={style.article}>
       <div className={style.poster}>
         {img==null &&
           <img

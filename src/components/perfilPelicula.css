@@ -1,0 +1,70 @@
+.contenedor_general_perfilPelicula{
+display: grid;
+grid-template-areas: 
+"encabezado encabezado"
+"opcionesvista reseñasyreparto";
+background-color: yellow;
+padding: 100px;
+margin: 100px;
+}
+
+.imagen_pelicula_id_perfilPelicula{
+    width: 271px;
+    height: 383px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.descripcion_pelicula_id_perfilPelicula{
+    text-align: start;
+    justify-content: center;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.fecha_pelicula{
+    display: flex;
+    flex-direction: row;
+}
+
+.duracion_pelicula{
+    display: flex;
+    flex-direction: row;   
+}
+
+.generos_pelicula{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.encabezado_perfilPeliculas{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-image: url('https://image.tmdb.org/t/p/w1200_and_h900_bestv2${data.backdrop_path}');
+    grid-area: "encabezado";
+    background-color: orange;
+}
+
+.contenedor_opciones_vista_perfilPelicula{
+    grid-area: "opcionesvista";
+    background-color: green;
+}
+
+.contenedor_reseñas_perfilPelicula{
+    display: flex;
+    gap: 10px;
+    background-color: blue;
+}
+
+.contenedor_reseñas_y_reparto_perfilPelicula{
+    grid-area: "reseñasyreparto";
+    background-color: violet;
+}

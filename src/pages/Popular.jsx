@@ -43,6 +43,7 @@ const options = {
           return (
             <CardPelicula
               key={el.id}
+              id={el.id}
               title={el.title}
               img={el.poster_path}
               descrp={el.overview}
