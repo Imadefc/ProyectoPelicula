@@ -1,30 +1,65 @@
 import { useEffect, useState } from "react";
 
-export function useIdHook ( id ) {
-    const [ data, setData ] = useState ({});
-    const [ loading, setLoading ] = useState (true);
+export function useIdHook(id) {
+  const [data, setData] = useState({
+    basicInfo: null,
+    credits: null,
+    gallery: null,
+    reviews: null,
+    plataforms: null,
+  });
+  const [loading, setLoading] = useState(true);
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZjczOTlkMmFkZDg2ZmQ5NDUwMjFmMTg0ZjAyODc3MiIsInN1YiI6IjYzYmVmYmY4NTVjMWY0MDBiNWZkMDdlMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oqqwdbtFGXDUBeG0bL5lAYUgQ98wzKc9cbk18mROIDA",
+    },
+  };
 
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYTg0YmM0ZWNhYTVlYTNhNDg5MGVhOGExZTQ1YTI0ZCIsInN1YiI6IjY2MTU4YzBkMTVhNGExMDE2NGY4MzhhMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.T_zDyJsgu3HaVs-XxOnfuq1-72BVt8F2kg0vfDTxsow'
-        }
-      };
+  async function getMovieData(id, type) {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}${
+        type ? `/${type}` : ""
+      }?language=en-US&key=bf7399d2add86fd945021f184f028772`,
+      options
+    );
+    const data = await response.json();
+    return data;
+  }
 
-    useEffect ( () => {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US&key=0a84bc4ecaa5ea3a4890ea8a1e45a24d`, options)
-        .then(response => response.json())
-        .then(response =>{console.log(response); 
-          setData(response)})
-        .catch(err => console.error(err))
-        .finally(() => {
-            setLoading(false)
-        });
-    },[ id ]) ;
+  async function getAllData() {
+    try {
+      const basicInfo = await getMovieData(id);
+      const credits = await getMovieData(id, "credits");
+      const gallery = await getMovieData(id, "images");
+      const reviews = await getMovieData(id, "reviews");
+      const plataforms = await getMovieData(id, "watch/providers");
 
-    return { data, loading };
+      setData({ ...data, basicInfo, credits, gallery, reviews, plataforms });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+      console.log(data);
+    }
+  }
 
-         
+  useEffect(() => {
+    getAllData();
+  }, [id]);
+
+  useEffect(() => {
+    console.log(data); // Coloca el console.log aquí
+  }, [data]);
+
+  return {
+    basicInfo: data.basicInfo,
+    credits: data.credits,
+    gallery: data.gallery,
+    reviews: data.reviews,
+    plataforms: data.plataforms,
+    loading,
+  };
 }
-
