@@ -7,7 +7,6 @@ import { BiTimeFive } from "react-icons/bi";
 import { BiCalendar } from "react-icons/bi";
 import { VscCircleFilled } from "react-icons/vsc";
 
-
 function DuracionPelicula({ duracionEnMinutos }) {
   const convertirAHorasYMinutos = (minutos) => {
     const horas = Math.floor(minutos / 60);
@@ -21,7 +20,7 @@ function DuracionPelicula({ duracionEnMinutos }) {
       <p>{convertirAHorasYMinutos(duracionEnMinutos)}</p>
     </div>
   );
-};
+}
 
 function PerfilPelicula({ id }) {
   const { data, loading } = useIdHook(id);
@@ -29,10 +28,10 @@ function PerfilPelicula({ id }) {
   return (
     <>
       <div className="contenedor_general_perfilPelicula">
-
         <div className="encabezado_perfilPeliculas">
           <div className="contenedor_imagen_pelicula_id_perfilPelicula">
-            <img className="imagen_pelicula_id_perfilPelicula"
+            <img
+              className="imagen_pelicula_id_perfilPelicula"
               src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${data.poster_path}`}
               alt="Monkey Man"
             />
@@ -42,22 +41,31 @@ function PerfilPelicula({ id }) {
             <h1>{data.title} </h1>
 
             <div className="fecha_pelicula">
-            <BiCalendar /><p>{data.release_date}</p>
+              <BiCalendar />
+              <p>{data.release_date}</p>
             </div>
-           
+
             <div className="duracion_pelicula">
-              <DuracionPelicula duracionEnMinutos={data.runtime} /> 
+              <DuracionPelicula duracionEnMinutos={data.runtime} />
             </div>
-    
-            <p> <i>{data.tagline}</i></p>
+
+            <p>
+              {" "}
+              <i>{data.tagline}</i>
+            </p>
 
             <div className="generos_pelicula">
-            {data.genres && data.genres.map(genre => ( <p className="generos_pelicula" key={genre.id}> <VscCircleFilled /> {genre.name}</p>))}
+              {data.genres &&
+                data.genres.map((genre) => (
+                  <p className="generos_pelicula" key={genre.id}>
+                    {" "}
+                    <VscCircleFilled /> {genre.name}
+                  </p>
+                ))}
             </div>
 
             <p>{data.overview}</p>
           </div>
-
         </div>
 
         <div className="contenedor_opciones_vista_perfilPelicula">
@@ -69,8 +77,10 @@ function PerfilPelicula({ id }) {
 
         <div className="contenedor_reseñas_y_reparto_perfilPelicula">
           <div className="contenedor_reseñas_perfilPelicula">
-            <CgUser /><p>{data.vote_average}</p>
-            <CgHeart /><p>{data.vote_count}</p>
+            <CgUser />
+            <p>{data.vote_average}</p>
+            <CgHeart />
+            <p>{data.vote_count}</p>
           </div>
 
           <div className="contenedor_reparto_perfilPelicula">
