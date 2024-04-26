@@ -1,18 +1,21 @@
 .contenedor_general_perfilPelicula{
 display: grid;
 grid-template-areas: 
-"encabezado encabezado"
-"opcionesvista reseñasyreparto";
+"encabezado"
+"opcionesvista"
+"reseñasyreparto";
 background-color: yellow;
 padding: 100px;
 margin: 100px;
+width: 100%;
+height: 100%;
 }
 
 .imagen_pelicula_id_perfilPelicula{
     width: 271px;
     height: 383px;
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .descripcion_pelicula_id_perfilPelicula{
@@ -44,8 +47,8 @@ margin: 100px;
 }
 
 .encabezado_perfilPeliculas{
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: row;
     background-image: url('https://image.tmdb.org/t/p/w1200_and_h900_bestv2${data.backdrop_path}');
@@ -56,15 +59,69 @@ margin: 100px;
 .contenedor_opciones_vista_perfilPelicula{
     grid-area: "opcionesvista";
     background-color: green;
+    width: 100%;
+    height: 50px;
+    padding: 5px;
 }
 
 .contenedor_reseñas_perfilPelicula{
     display: flex;
     gap: 10px;
     background-color: blue;
+    text-align: start;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: auto;
 }
 
 .contenedor_reseñas_y_reparto_perfilPelicula{
     grid-area: "reseñasyreparto";
     background-color: violet;
+    padding: 10px;
+    width: auto;
+    height: auto;
+}
+
+.contenedor_cast_perfilPelicula{
+    width: 800px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    scrollbar-width: thin;
+    gap: 30px;
+    background-color: purple;
+}
+
+.card_reparto_personajes_perfilPelicula{
+    padding: 5px;
+    gap: 10px;
+    background-color: orange;
+    
+}
+
+.imagen_personaje_pelicula_perfilPelicula{
+    width: 125px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.barra_desplazamiento_horizontal_actores_perfilPelicula{
+    overflow: auto;
+    white-space: nowrap;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    width: auto;
+    height: auto;
+    background-color: red;
+}
+
+.media_pelicula_perfilPelicula{
+    padding: 5px;
+    background-color: grey;
+    display: flex;
+    gap: 10px;
 }

@@ -22,6 +22,22 @@ function DuracionPelicula({ duracionEnMinutos }) {
   );
 }
 
+function obtenerUrlImagenPlataformas (countryData) {
+  const hayAlquiler = countryData.rent && countryData.rent.length > 0;
+  const hayCompra = countryData.buy && countryData.buy.length > 0;
+
+  
+  if (hayAlquiler && hayCompra) {
+    return "URL_DE_LA_IMAGEN_PARA_ALQUILER_Y_COMPRA";
+  } else if (hayAlquiler) {
+    return "URL_DE_LA_IMAGEN_PARA_ALQUILER";
+  } else if (hayCompra) {
+    return "URL_DE_LA_IMAGEN_PARA_COMPRA";
+  } else {
+    return "URL_DE_LA_IMAGEN_GENÉRICA";
+  }
+}
+
 function PerfilPelicula({ id }) {
   const { basicInfo, credits, gallery, plataforms, reviews, loading } =
     useIdHook(id);
@@ -44,7 +60,9 @@ function PerfilPelicula({ id }) {
     <>
       {!loading && (
         <div className="contenedor_general_perfilPelicula">
+
           <div className="encabezado_perfilPeliculas">
+
             <div className="contenedor_imagen_pelicula_id_perfilPelicula">
               <img
                 className="imagen_pelicula_id_perfilPelicula"
@@ -85,10 +103,17 @@ function PerfilPelicula({ id }) {
           </div>
 
           <div className="contenedor_opciones_vista_perfilPelicula">
-            <a href="">
-              {" "}
-              <img src="" alt="" />
-            </a>
+            {Object.keys(plataforms.results).map((countryCode) => {
+              const countryData = plataforms.results[countryCode];
+              const imageUrl = obtenerUrlImagenPlataformas(countryData);
+
+              return (
+                <a href={countryData.link} key={countryCode}>
+                  {" "}
+                  <img src={imageUrl} alt={`Plataformas de visualizacion en ${countryCode}`} />
+                </a>
+              );
+            })}
           </div>
 
           <div className="contenedor_reseñas_y_reparto_perfilPelicula">
@@ -100,16 +125,55 @@ function PerfilPelicula({ id }) {
             </div>
 
             <div className="contenedor_reparto_perfilPelicula">
-              <p>Cast:</p>
+              <h2>Cast:</h2>
 
-              <div className="card_reparto_personajes_perfilPelicula">
-                <img
-                  className="imagen_personaje_pelicuola_perfilPelicula"
-                  src=""
-                  alt=""
-                />
+              <div className="contenedor_cast_perfilPelicula">
+                {credits.cast.slice(0, 5).map((actor) => (
+                  <div
+                    className="card_reparto_personajes_perfilPelicula"
+                    key={actor.id}
+                  >
+                    <img
+                      className="imagen_personaje_pelicula_perfilPelicula"
+                      src={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
+                      alt={actor.name}
+                    />
+                    <p>{actor.name}</p>
+                    <p>{actor.character}</p>
+                  </div>
+                ))}
               </div>
+              {credits.cast.length > 5 && (
+                <div className="barra_desplazamiento_horizontal_actores_perfilPelicula">
+                  {" "}
+                </div>
+              )}
             </div>
+          </div>
+
+          <h2>Media</h2>
+          <div className="media_pelicula_perfilPelicula">
+              
+              <div>
+                <h3>Backdrops</h3>
+                {gallery.backdrops.map((item, index) =>(
+                  <img key={index} src={`https://image.tmdb.org/t/p/original${item.file_path}`}  alt={`Backdrop ${index}`} /> 
+                ))}
+              </div>
+
+              <div>
+                <h3>Logos</h3>
+                {gallery.logos.map((item, index) => (
+                  <img key={index} src={`https://image.tmdb.org/t/p/original${item.file_path}`} alt={`Logo ${index}`} />
+                ))}
+              </div>
+
+              <div>
+                <h3>Posters</h3>
+                {gallery.posters.map((item, index) => (
+                   <img key={index} src={`https://image.tmdb.org/t/p/original${item.file_path}`} alt={`Poster ${index}`} />
+                ))}
+              </div>
           </div>
         </div>
       )}
