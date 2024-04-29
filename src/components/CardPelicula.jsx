@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import style from "../styles/CardPelicula.module.css";
 import Votacion from "./Votacion";
 

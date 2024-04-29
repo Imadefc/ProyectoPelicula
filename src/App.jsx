@@ -9,6 +9,8 @@ import { Idcontext } from "./context/idcontext";
 
 function App() {
 
+  const [ajustes, setAjustes]=useState({     oscuro:localStorage.getItem("oscuro"),     adult:localStorage.getItem("adult"),     lenguaje:localStorage.getItem("lenguaje")   })
+
   const { selectedMovie } = useContext (Idcontext)
 
   return (
@@ -17,10 +19,10 @@ function App() {
       {selectedMovie && <PerfilPelicula id={ selectedMovie } />}
         
         <Routes>
+          <Route path="ajustes" element={<Ajustes />} />
           <Route path="listas" element={<Listas />} />
           <Route path="popular" element={<Popular />} />
           <Route path="/" element={<Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />} />
-          <Route path="contacto" element={<Contacto/>}/>
         </Routes>
     </>
   );

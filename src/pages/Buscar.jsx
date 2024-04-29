@@ -2,7 +2,7 @@ import style from "../styles/Buscar.module.css";
 import CardPelicula from "../components/CardPelicula";
 import Aside from "../components/Aside";
 import { useState } from "react";
-import Ajustes from "../components/Ajustes";
+import Ajustes from "./Ajustes";
 import PerfilPelicula from "../components/PerfilPelicula"
 import { customHooksHandleAnterior, customHooksHandleBuscar, customHooksSiguiente, handleBotonAñadirVistoMastarde } from "../services/customHooks";
 import Footer from "../components/Footer";
