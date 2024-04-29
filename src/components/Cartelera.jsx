@@ -70,20 +70,7 @@ function Cartelera() {
           } alt="" />
     </div>
 
-    <div className='minipantallas_opciones_peliculas'>
-          {reorganizarMinipantallas().map((index) => (
-            <img
-              key={index}
-              className={`cartelera_opcion_${index}`}
-              src={
-                index === 1 ? "https://es.web.img2.acsta.net/pictures/14/07/09/10/00/277089.jpg" :
-                index === 2 ? "https://es.web.img3.acsta.net/pictures/13/12/04/16/18/394160.jpg" :
-                index === 3 ? "https://marcialpons.es/media/img/portadas/9788408262336.jpg" :
-                "https://m.media-amazon.com/images/M/MV5BMzI0NmVkMjEtYmY4MS00ZDMxLTlkZmEtMzU4MDQxYTMzMjU2XkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_.jpg" 
-              }
-              alt=""/>
-          ))}
-        </div>
+    
 
     <div className='contenedor_botones_slider'>
         <button className='slider_izq' onClick={() => manejarClick('izquierda')}> <BiSolidChevronLeft /> </button>

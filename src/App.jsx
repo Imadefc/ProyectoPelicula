@@ -8,7 +8,7 @@ import { opciones } from "./services/opciones";
 import OpcionesView from "./pages/OpcionesViews";
 import OpcionesIviews from "./pages/OpcionesIviews";
 import { opcionesI } from "./services/opcionesI";
-import Contacto from "./pages/Contacto";
+import Contactos from "./pages/Contactos";
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
           <Route path="listas" element={<Listas />} />
           <Route path="popular" element={<Popular />} />
           <Route path="/" element={<Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />} />
-          <Route path="contacto" element={<Contacto/>}/>
+          <Route path="contacto" element={<Contactos/>}/>
         </Routes>
     </>
   );

@@ -73,10 +73,17 @@ margin-left: 10rem;
   display: flex;
   position: absolute;
   right: 0;
+  top: -50px;
   flex-direction: column;
   gap: 1rem;
   border-radius: 0.5rem;
   background-color:white;
+}
+.navHam{
+  transition: 0.3s;
+}
+.navHam:hover{
+  background-color: azure;
 }
 .contenedorOpcionesNavHam a{
   text-decoration: none;
