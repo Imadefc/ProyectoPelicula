@@ -1,10 +1,12 @@
 
 import Aside from '../components/Aside'
 
-import{ useContext, useEffect, useState } from "react";
+import{ useEffect, useState } from "react";
 import CardPelicula from "../components/CardPelicula";
 import style from "../styles/Populares.module.css"
-import { handleBotonAñadirVistoMastarde } from '../services/serviciosBotones';
+import Ajustes from '../components/Ajustes';
+import { handleBotonAñadirVistoMastarde } from '../services/customHooks';
+import Footer from "../components/Footer"
 const options = {
   method: "GET",
   headers: {
@@ -32,6 +34,7 @@ const options = {
   return (
     <>
     <Aside/>
+    
     <h1 className={style.tituloPopulares}>Titulos Populares</h1>
 
   
@@ -55,6 +58,7 @@ const options = {
           );
         })}
       </article>
+      <Footer/>
     </>
   );
 }

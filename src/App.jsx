@@ -19,8 +19,8 @@ function App() {
         <Routes>
           <Route path="listas" element={<Listas />} />
           <Route path="popular" element={<Popular />} />
-          <Route path="ajustes" element={<Ajustes />} />
-          <Route path="/" element={<Buscar />} />
+          <Route path="/" element={<Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />} />
+          <Route path="contacto" element={<Contacto/>}/>
         </Routes>
     </>
   );

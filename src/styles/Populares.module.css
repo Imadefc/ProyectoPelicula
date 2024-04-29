@@ -1,9 +1,9 @@
 .contenedor{
     display: grid;
-    position: relative;
-    top: 200px;
-    left: 328px;
-    margin-left: 4rem;
+    width: 80%;
+    margin-left: auto;
+    margin-top: 100px;
+    margin-right: auto;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(5,1fr);
     width: fit-content;
@@ -12,13 +12,31 @@
 
 }
 .tituloPopulares{
-    position: relative;
-    top: 80px ;
-    left: 850px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 54px;
+    
+    margin-top: 4rem;
 }
 .idioma{
     position: absolute;
     right: 200px;
     top: 100px;
+}
+
+@media(max-width:1350px){
+    .contenedor{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media(max-width:1000px){
+    .contenedor{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media(max-width:675px){
+    .contenedor{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
