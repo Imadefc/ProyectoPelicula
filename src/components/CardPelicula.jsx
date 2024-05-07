@@ -1,20 +1,28 @@
 import React, { useContext, useState } from "react";
 import style from "../styles/CardPelicula.module.css";
 import Votacion from "./Votacion";
+import { motion } from "framer-motion";
+import { Idcontext } from "../context/idcontext";
 
 function CardPelicula({handleBotonIzq,handleBotonDer,puntuacion ,year="NotF", img, title, descrp, id }) {
   const [control, setControl] = useState(true);
 
   const { setSelectedMovie } = useContext(Idcontext)
 
-  function onClick (){
+  function onClick ( ){
     setSelectedMovie ( id )
   }
 
 
 
   return (
-    <article onClick={onClick} className={style.article}>
+    <motion.article 
+      onClick={onClick}
+      whileHover={{
+        scale:1.1,
+        zIndex:100
+      }}
+     className={style.article}>
       <div className={style.poster}>
         {img==null &&
           <img
@@ -39,13 +47,17 @@ function CardPelicula({handleBotonIzq,handleBotonDer,puntuacion ,year="NotF", im
         <Votacion puntuacion={puntuacion} />
         
       </div>
-      <div onClick={handleBotonIzq} className={style.bottonVisto}>
+      <motion.div
+        whileTap={{
+          backgroundColor:"#FF0000"
+        }}
+       onClick={handleBotonIzq} className={style.bottonVisto}>
         <p>Visto</p>
-      </div>
+      </motion.div>
       <div onClick={handleBotonDer} className={style.bottonMasTarde}>
         <p>Mas Tarde</p>
       </div>
-    </article>
+    </motion.article>
   );
 }
 

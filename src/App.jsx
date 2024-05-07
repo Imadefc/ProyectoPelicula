@@ -2,10 +2,17 @@ import { Route, Routes } from "react-router";
 import Listas from "../src/pages/Listas";
 import Buscar from "./pages/Buscar";
 import Popular from "./pages/Popular";
-import Ajustes from "./pages/Ajustes";
-import { useContext, useState } from "react";
-import PerfilPelicula from "./components/PerfilPelicula";
+import { useState, useContext } from "react";
+import Footer from "./components/Footer";
+import { opciones } from "./services/opciones";
+import OpcionesView from "./pages/OpcionesViews";
+import OpcionesIviews from "./pages/OpcionesIviews";
+import { opcionesI } from "./services/opcionesI";
+import Contactos from "./pages/Contactos";
 import { Idcontext } from "./context/idcontext";
+import Ajustes from "./pages/Ajustes";
+import PerfilPelicula from "./components/PerfilPelicula";
+
 
 function App() {
 
@@ -23,6 +30,7 @@ function App() {
           <Route path="listas" element={<Listas />} />
           <Route path="popular" element={<Popular />} />
           <Route path="/" element={<Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />} />
+          <Route path="contacto" element={<Contactos/>}/>
         </Routes>
     </>
   );

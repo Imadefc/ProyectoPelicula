@@ -114,7 +114,7 @@
 .contenedor_general_slider {
   width: 100vh;
   height: 100%;
-  background-color: rgba(30, 30, 30, 1);
+  background-color: yellow;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
