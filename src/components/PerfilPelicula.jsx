@@ -33,7 +33,7 @@ function PerfilPelicula({ id }) {
   const [mostrarPosters, setMostrarPosters] = useState(false);
   const [likes, setLikes] = useState(basicInfo ? basicInfo.vote_count : 0);
   const [likeClicked, setLikeClicked] = useState(false);
-  const { setSelectedMovie } = useContext(Idcontext)
+  const { setSelectedMovie } = useContext(Idcontext);
 
   useEffect(() => {
     setLikes(basicInfo ? basicInfo.vote_count : 0);
