@@ -26,19 +26,8 @@
     font-family: 'Cera Pro Thin';
     src: url(../assets/Cera-Pro/Cera\ Pro\ Thin.otf);
   }
+*/
 
-  .todo_perfilPelicula,
-.contenedor_general_perfilPelicula,
-.descripcion_pelicula_id_perfilPelicula,
-.encabezado_perfilPeliculas,
-.contenedor_opciones_vista_perfilPelicula,
-.contenedor_reseñas_y_reparto_perfilPelicula,
-.contenedor_cast_perfilPelicula,
-.card_reparto_personajes_texto_perfilPelicula,
-.media_pelicula_perfilPelicula {
-    font-family: "Cera Pro Medium";
-}
-   */
 .todo_perfilPelicula{
     margin: 0px;
     padding: 0px;

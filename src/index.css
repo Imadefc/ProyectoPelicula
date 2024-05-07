@@ -1,8 +1,29 @@
+@font-face {
+  font-family: "Cera Pro Bold";
+  src: url(./assets/Cera-Pro/Cera\ Pro\ Bold.otf) format();
+}
 
+@font-face {
+  font-family: "Cera Pro Light";
+  src: url(./assets/Cera-Pro/Cera\ Pro\ Light.otf);
+}
 
-@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+@font-face {
+  font-family: "Cera Pro Regular";
+  src: url(./assets/Cera-Pro/Cera\ Pro\ Regular.otf);
+}
 
-body{
+@font-face {
+  font-family: "Cera Pro Medium";
+  src: url(./assets/Cera-Pro/Cera\ Pro\ Medium.otf) format("opentypefont");
+}
+
+@font-face {
+  font-family: "Cera Pro Thin";
+  src: url(./assets/Cera-Pro/Cera\ Pro\ Thin.otf);
+}
+
+body {
   width: 100%;
-  font-family: "League Gothic", sans-serif;
+  font-family: "Cera Pro Medium";
 }
