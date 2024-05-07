@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import style from "../style/CardPelicula.module.css";
 import Votacion from "./Votacion";
+import { Idcontext } from "../context/idcontext";
 
 function CardLista({name, arrayContr,setArrayContr,id,array,setArray, botonIzq,botonDer,andleBotonDer,puntuacion ,year="NotF", img, title, descrp }) {
   const [control, setControl] = useState(true);
+
+  const { setSelectedMovie } = useContext ( Idcontext )
 
   function handleControl() {
     setControl(!control);
@@ -45,7 +48,9 @@ function CardLista({name, arrayContr,setArrayContr,id,array,setArray, botonIzq,b
   }
 
   return (
-    <article className={style.article} id={name}>
+    <article className={style.article} id={name} onClick={() => {
+      setSelectedMovie (id)
+    }}>
       <div className={style.poster}>
       {img==null &&
           <img

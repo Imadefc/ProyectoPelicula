@@ -4,7 +4,7 @@ import Aside from '../components/Aside'
 import{ useEffect, useState } from "react";
 import CardPelicula from "../components/CardPelicula";
 import style from "../styles/Populares.module.css"
-import Ajustes from '../components/Ajustes';
+import Ajustes from './Ajustes';
 import { handleBotonAñadirVistoMastarde } from '../services/customHooks';
 import Footer from "../components/Footer"
 const options = {
