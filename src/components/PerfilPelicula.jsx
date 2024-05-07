@@ -308,7 +308,7 @@ function PerfilPelicula({ id }) {
         )}
       </div>
     </>
-  );
+  );   
 }
 
 export default PerfilPelicula;
