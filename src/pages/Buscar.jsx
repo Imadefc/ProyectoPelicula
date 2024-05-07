@@ -42,12 +42,9 @@ function Buscar({varGlobales,setVarGlobales}) {
   function handleAnterior(){
     customHooksHandleAnterior(page,tituloGuardado,setDatos,setPage)
   }
-  function handleControlPerfilPelicula(e){
-    console.log(e.currentTarget.name);
-  }
   return (
     <>
-      <Aside/>
+     
       
       <div className={style.buscar}>
         <input
@@ -67,10 +64,11 @@ function Buscar({varGlobales,setVarGlobales}) {
         {datos && 
           datos.map((el) => {
             return (
-              <div  onClick={handleControlPerfilPelicula}>
+              
               <CardPelicula
                 puntuacion={el.vote_average}
                 key={el.id}
+                id={el.id}
                 year={el.release_date}
                 img={el.poster_path}
                 descrp={el.overview}
@@ -79,7 +77,7 @@ function Buscar({varGlobales,setVarGlobales}) {
                 handleBotonIzq={()=>handleBotonAñadirVistoMastarde("visto",el)}
              
               />
-              </div>
+              
               
             );
           })}

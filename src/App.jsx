@@ -12,6 +12,7 @@ import Contactos from "./pages/Contactos";
 import { Idcontext } from "./context/idcontext";
 import Ajustes from "./pages/Ajustes";
 import PerfilPelicula from "./components/PerfilPelicula";
+import Aside from "./components/Aside";
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
 
   return (
     <>
-
+        <Aside/>
       {selectedMovie && <PerfilPelicula id={ selectedMovie } />}
         
         <Routes>

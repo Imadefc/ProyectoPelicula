@@ -31,7 +31,7 @@ function Contactos() {
 
   return (
     <>
-    <Aside/>
+    
       <div style={{ display: 'flex', flexWrap: 'wrap', margin: '40px', padding: '30px' }}>
       {contactos.map(contacto => (
         <Contacto 

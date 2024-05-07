@@ -30,10 +30,10 @@
     margin-top: 100px;
 }
 .icono{
-    position: absolute;
-    right: 23%;
-    top: 235px;
+    position: relative;
     width: 50px;
+    bottom: 90px;
+    left: 1230px;
     cursor: pointer;
 }
 .page{
@@ -87,6 +87,9 @@ body{
     .page{
         left: 500px;
         height: fit-content;  
+    }
+    .icono{
+        display: none;
     }
 }
 @media(max-width:1170px){

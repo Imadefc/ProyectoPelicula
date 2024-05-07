@@ -11,6 +11,7 @@ function CardPelicula({handleBotonIzq,handleBotonDer,puntuacion ,year="NotF", im
 
   function onClick ( ){
     setSelectedMovie ( id )
+    console.log(id);
   }
 
 
@@ -22,6 +23,7 @@ function CardPelicula({handleBotonIzq,handleBotonDer,puntuacion ,year="NotF", im
         scale:1.1,
         zIndex:100
       }}
+      style={{zIndex:"100"}}
      className={style.article}>
       <div className={style.poster}>
         {img==null &&
