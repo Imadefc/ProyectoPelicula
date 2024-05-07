@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useIdHook } from "../services/useID";
 import "./perfilPelicula.css";
 import { CgHeart } from "react-icons/cg";
@@ -7,6 +7,7 @@ import { BiTimeFive } from "react-icons/bi";
 import { BiCalendar } from "react-icons/bi";
 import { VscCircleFilled } from "react-icons/vsc";
 import { IoClose } from "react-icons/io5";
+import { Idcontext } from "../context/idcontext";
 
 function DuracionPelicula({ duracionEnMinutos }) {
   const convertirAHorasYMinutos = (minutos) => {
@@ -30,9 +31,9 @@ function PerfilPelicula({ id }) {
   const [mostrarBackdrops, setMostrarBackdrops] = useState(false);
   const [mostrarLogos, setMostrarLogos] = useState(false);
   const [mostrarPosters, setMostrarPosters] = useState(false);
-  const [mostrarPerfilPelicula, setMostrarPerfilPelicula] = useState(true);
   const [likes, setLikes] = useState(basicInfo ? basicInfo.vote_count : 0);
   const [likeClicked, setLikeClicked] = useState(false);
+  const { setSelectedMovie } = useContext(Idcontext)
 
   useEffect(() => {
     setLikes(basicInfo ? basicInfo.vote_count : 0);
@@ -66,12 +67,8 @@ function PerfilPelicula({ id }) {
   };
 
   const handleClosePerfilPelicula = () => {
-    setMostrarPerfilPelicula(false);
+    setSelectedMovie(null);
   };
-
-  if (!mostrarPerfilPelicula) {
-    return null;
-  }
 
   return (
     <>
