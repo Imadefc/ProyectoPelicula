@@ -2,7 +2,11 @@ import style from "../styles/Buscar.module.css";
 import CardPelicula from "../components/CardPelicula";
 import Aside from "../components/Aside";
 import { useState } from "react";
-import { handleBotonAñadirVistoMastarde } from "../services/serviciosBotones";
+import Ajustes from "../components/Ajustes";
+import PerfilPelicula from "../components/PerfilPelicula"
+import { customHooksHandleAnterior, customHooksHandleBuscar, customHooksSiguiente, handleBotonAñadirVistoMastarde } from "../services/customHooks";
+import Footer from "../components/Footer";
+import Cartelera from "../components/Cartelera";
 
 const options = {
   method: "GET",
@@ -13,35 +17,17 @@ const options = {
   },
 };
 
-function Buscar() {
+function Buscar({varGlobales,setVarGlobales}) {
   const [datos, setDatos] = useState(null);
   const [busqueda, setBusqueda] = useState("");
   const [tituloGuardado, setTituloGuardado] = useState("");
-  const [numRes, setNumRes]= useState(null)
+  const [numRes, setNumRes]= useState(null);
   const [page, setPage] = useState({ page: null, pageMax: null });
 
   
 
   function handlebuscar(){
-    fetch(
-      "https://api.themoviedb.org/3/search/movie?key=" +
-        import.meta.VITE_API_KEY +
-        "&query=" +
-        busqueda +
-        "&include_adult=false&language=es-US&page=1",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        setDatos(response.results);
-        setTituloGuardado(busqueda);
-        setPage({ page: response.page, pageMax: response.total_pages });
-        console.log(datos);
-        setNumRes(response.total_results);
-      })
-      .catch((err) => console.error(err));
-    setBusqueda("");
+    customHooksHandleBuscar(busqueda,setDatos,setTituloGuardado,setPage,setNumRes,setBusqueda)
   }
   function handleEnter(event) {
     if (event.code === "Enter") {
@@ -50,45 +36,19 @@ function Buscar() {
   }
 
   function handleSiguiente() {
-    if (page.page < page.pageMax) {
-      setPage({ page: page.page++, pageMax: page.pageMax });
-      fetch(
-        "https://api.themoviedb.org/3/search/movie?key=" +
-          import.meta.VITE_API_KEY +
-          "&query=" +
-          tituloGuardado +
-          "&include_adult=false&language=es-US&page=" +
-          page.page,
-        options
-      )
-        .then((response) => response.json())
-        .then((response) => {
-          console.log(response);
-          setDatos(response.results);
-          setPage({ page: response.page, pageMax: response.total_pages });
-          console.log(datos);
-        })
-        .catch((err) => console.error(err));
-    }
+    customHooksSiguiente(page,setPage,tituloGuardado,setDatos,setPage)
   }
 
   function handleAnterior(){
-    if(page.pageMax>2){
-      setPage({page:page.page--, pageMax:page.pageMax})
-      fetch("https://api.themoviedb.org/3/search/movie?key="+ import.meta.VITE_API_KEY+"&query="+tituloGuardado+"&include_adult=false&language=es-US&page="+page.page, options)
-                .then(response => response.json())
-                .then(response => {
-                    console.log(response);
-                    setDatos(response.results)
-                    setPage({page:response.page, pageMax:response.total_pages})
-                    console.log(datos);
-                })
-                .catch(err => console.error(err));
-    }
+    customHooksHandleAnterior(page,tituloGuardado,setDatos,setPage)
+  }
+  function handleControlPerfilPelicula(e){
+    console.log(e.currentTarget.name);
   }
   return (
     <>
       <Aside/>
+      
       <div className={style.buscar}>
         <input
           onChange={(e) => {
@@ -104,9 +64,10 @@ function Buscar() {
       <img onClick={handlebuscar}  className={style.icono} width={"100px"} src="https://i.ibb.co/1dPp0wr/imagen-2024-04-04-011057169.png"/>
       {numRes && <h3 className={style.numRes}>Hay {numRes} elementos encontrados </h3>}
       <article className={style.contenedor}>
-        {datos &&
+        {datos && 
           datos.map((el) => {
             return (
+              <div  onClick={handleControlPerfilPelicula}>
               <CardPelicula
                 puntuacion={el.vote_average}
                 key={el.id}
@@ -117,8 +78,11 @@ function Buscar() {
                 handleBotonDer={()=>handleBotonAñadirVistoMastarde("mastarde",el)}
                 handleBotonIzq={()=>handleBotonAñadirVistoMastarde("visto",el)}
               />
+              </div>
+              
             );
           })}
+          <span></span>
         {datos && (
           <div className={style.page}>
             <a onClick={handleAnterior}>Anterior</a>
@@ -126,8 +90,11 @@ function Buscar() {
             <a onClick={handleSiguiente}>Siguiente</a>
           </div>
         )}
-        
+        {!datos &&
+          <Cartelera/>
+        }
       </article>
+      <Footer/>
 
     </>
   );
