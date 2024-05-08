@@ -1,5 +1,5 @@
 .linkI {
-    width: 100%px;
+    width: 105%px;
     height: 54px;
     display: flex;
     justify-content: center;
@@ -23,7 +23,16 @@
   align-items: center;
   text-align: center;
   border: 5px solid white;
+  transition: all 0.3s;
+  box-shadow: black 0px 7px 15px 1px;
+  border-radius: 10px;
 }
+
+.imagenes_footer:hover{
+  transform: scale(1.1);
+}
+
+
 @media(max-width:700px){
   .nombres{
     display: block;

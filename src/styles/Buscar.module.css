@@ -13,12 +13,12 @@
     justify-content: center;
     left: 500px;
     top: 200px;
+    font-family: "Cera Pro Regular";
     font-size:30px ;
     border: transparent;
     border-bottom: solid 1px #ccc;
     padding: 10px 10px 10px 30px;
     outline: none;
-    border:1px solid black;
     -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
     -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
     box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
@@ -31,6 +31,7 @@
     display: flex;
     justify-content: center;
     margin-top: 80px;
+    
 }
 .icono{
     position: absolute;
@@ -132,7 +133,7 @@
     width: 100%;
     overflow: hidden;
     filter: blur(4px);
-
+    top: 180px;
 }
 
 body{

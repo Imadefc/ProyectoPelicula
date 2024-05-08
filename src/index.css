@@ -1,29 +1,29 @@
 @font-face {
   font-family: "Cera Pro Bold";
-  src: url(./assets/Cera-Pro/Cera\ Pro\ Bold.otf) format();
+  src: url(../src/assets/Cera-Pro/Cera\ Pro\ Bold.otf) format();
 }
 
 @font-face {
   font-family: "Cera Pro Light";
-  src: url(./assets/Cera-Pro/Cera\ Pro\ Light.otf);
+  src: url(../src/assets/Cera-Pro/Cera\ Pro\ Light.otf);
 }
 
 @font-face {
   font-family: "Cera Pro Regular";
-  src: url(./assets/Cera-Pro/Cera\ Pro\ Regular.otf);
+  src: url(../src/assets/Cera-Pro/Cera\ Pro\ Regular.otf);
 }
 
 @font-face {
   font-family: "Cera Pro Medium";
-  src: url(./assets/Cera-Pro/Cera\ Pro\ Medium.otf) format("opentypefont");
+  src: url(../src/assets/Cera-Pro/Cera\ Pro\ Medium.otf) format("opentypefont");
 }
 
 @font-face {
   font-family: "Cera Pro Thin";
-  src: url(./assets/Cera-Pro/Cera\ Pro\ Thin.otf);
+  src: url(../src/assets/Cera-Pro/Cera\ Pro\ Thin.otf);
 }
 
 body {
   width: 100%;
-  font-family: "Cera Pro Medium";
+  font-family: "Cera Pro Regular";
 }

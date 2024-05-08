@@ -1,13 +1,22 @@
 .link {
-    width: auto;
+    width: 105%;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 48px;
+    font-size: 35px;
     white-space: nowrap;
+    margin-top: 5px;
+    box-shadow: black 0px 7px 15px 1px;
+    border-radius: 10px;
+    transition: all 0.3s ;
+    text-decoration: none;
+  }
 
+  .link:hover{
+    transform: scale(1.1);
+    text-decoration: underline;
   }
 
   .opcionesContainer a{

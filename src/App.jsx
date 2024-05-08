@@ -12,7 +12,7 @@ import Contactos from "./pages/Contactos";
 import { Idcontext } from "./context/idcontext";
 import Ajustes from "./pages/Ajustes";
 import PerfilPelicula from "./components/PerfilPelicula";
-
+import {Layout} from './Layout'
 
 function App() {
 
@@ -26,11 +26,44 @@ function App() {
       {selectedMovie && <PerfilPelicula id={ selectedMovie } />}
         
         <Routes>
-          <Route path="ajustes" element={<Ajustes />} />
-          <Route path="listas" element={<Listas />} />
-          <Route path="popular" element={<Popular />} />
-          <Route path="/" element={<Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />} />
-          <Route path="contacto" element={<Contactos/>}/>
+          <Route path="ajustes"
+           element={
+           <Layout>
+           <Ajustes />
+           </Layout>
+           }/>
+          <Route
+          path="listas"
+          element={
+            <Layout>
+              <Listas />
+            </Layout>
+          }
+        />
+        <Route
+          path="popular"
+          element={
+            <Layout>
+              <Popular />
+            </Layout>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />
+            </Layout>
+          }
+        />
+        <Route
+          path="contacto"
+          element={
+            <Layout>
+              <Contactos />
+            </Layout>
+          }
+        />
         </Routes>
     </>
   );

@@ -29,8 +29,7 @@
   .pantalla_cartelera {
     width: 300px;
     height: 410px;
-    background-color: grey;
-    box-shadow: 1px 3px 35px 10px black;
+    box-shadow: black 2px 3px 35px 30px;
     border-radius: 10px;
     margin-bottom: 30px;
     display: flex;
@@ -111,6 +110,7 @@
   
 .slider_der {
     width: 60px;
+    border: none;
     height: 200px;
     border-radius: 20px;
     margin-left: 10px;
@@ -123,7 +123,7 @@
     transition: transform 0.3s ease;
     -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
     -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
-    box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 10px 35px 40px rgba(0, 0, 0, 0.6);
   }
   
   .slider_der:hover {
@@ -132,6 +132,7 @@
 
   .slider_izq {
     width: 60px;
+    border: none;
     height: 200px;
     border-radius: 20px;
     margin-right: 10px;
@@ -144,7 +145,7 @@
     transition: transform 0.3s ease;
     -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
     -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
-    box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 10px 35px 40px rgba(0, 0, 0, 0.6);
   }
   
   .slider_izq:hover {
@@ -163,7 +164,7 @@
     border-radius: 10px;
     -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
     -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
-    box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 10px 35px 30px rgba(0, 0, 0, 0.6);
     position: relative;
     bottom: 220px;
   }
@@ -174,6 +175,9 @@
     background-color: grey;
     display: flex;
     border-radius: 5px;
+    -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 10px 35px 30px rgba(0, 0, 0, 0.6);
   }
 
   .rectangulo.iluminado{
