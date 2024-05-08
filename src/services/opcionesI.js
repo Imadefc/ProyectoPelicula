@@ -7,17 +7,17 @@ export const opcionesI = [
     {
         nameI: "Instagram",
         imageI:"https://i.ibb.co/9WJsnyp/Instagram.png",
-        descriptionI: "eres",
+        descriptionI: "Aqui nuestro Instagram",
     },
     {
         nameI: "Linkedin",
         imageI:"https://i.ibb.co/rf4nxn9/Linkedin.png",
-        descriptionI: "una",
+        descriptionI: "Aqui nuestro Linkedin",
     },
     {
         nameI: "Youtube",
         imageI:"https://i.ibb.co/MD37cmM/Youtube.png",
-        descriptionI: "tonta",
+        descriptionI: "Aqui nuestro Youtube",
     },
   
 ];

@@ -28,7 +28,7 @@ function Aside() {
   return (
     <>
       <aside className={style.contenedor}>
-
+        {mensajeBienvenida && <div className={style.mensaje}></div>}
         <h1 className={style.titulo}>CineSearch</h1>
         <div className={style.opciones}>
           <NavLink className={style.nav} to={"/"}>
@@ -44,7 +44,7 @@ function Aside() {
             <h3 className={style.links}>Contacto</h3>
           </NavLink>
           <button onClick={onChangeTheme} className={style.nav_theme}>
-            <h3 className={style.links_theme}>Dark / Light</h3>
+            <h3 className={style.links_theme}>Cambiar tema</h3>
           </button>
         </div>
         <GiHamburgerMenu

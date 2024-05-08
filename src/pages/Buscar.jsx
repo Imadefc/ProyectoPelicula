@@ -35,6 +35,7 @@ function Buscar({ varGlobales, setVarGlobales }) {
   useEffect(() => {
     const audio = new Audio(audioFile);
     if (mensajeBienvenida) {
+      console.log("Bienvenido");
       audio.play();
     }
 
@@ -76,9 +77,9 @@ function Buscar({ varGlobales, setVarGlobales }) {
     <>
       {mensajeBienvenida && <div className={style.mensaje}><h1 >CineSearch</h1></div>}
       <Aside />
-    
+
       <div className={style.contenedor_imagen}>
-        <img src={fondo} alt="" width={"100%"} />
+        <img src={fondo} alt="" width={"100%"} height={'100%'} />
       </div>
 
       <div className={style.buscar}>
