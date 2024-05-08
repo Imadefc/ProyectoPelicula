@@ -9,7 +9,7 @@ import { opciones } from "./services/opciones";
 import OpcionesView from "./pages/OpcionesViews";
 import OpcionesIviews from "./pages/OpcionesIviews";
 import { opcionesI } from "./services/opcionesI";
-import Contactos from "./pages/Contacto";
+import Contactos from "./pages/Contactos";
 
 
 function App() {

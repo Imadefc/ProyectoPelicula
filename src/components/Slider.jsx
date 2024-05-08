@@ -3,15 +3,7 @@ import "react-multi-carousel/lib/styles.css";
 import CardPelicula from "./CardPelicula";
 import { handleBotonAñadirVistoMastarde } from "../services/customHooks";
 import { useState, useEffect } from "react";
-
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMzA1YWE4OWMyZTMxOTliYThlNjQxOGQ3MDZlMzUwYyIsInN1YiI6IjYyMDMxZGJhZTMyM2YzMDA4ZWRhMTY2ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cDHhSwwgvqEMJ9NOE1o-pwvbtw7y1FX41t21NzLlhXw",
-  },
-};
+import useFetch from "../hooks/useFetch";
 
 /*
 const URLestrenando =
@@ -21,19 +13,8 @@ const URLmasVALORADAS =
 "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1"
 */
 
-function Slider() {
-  const [datos, setDatos] = useState(null);
-  useEffect(() => {
-    const URLporESTRENAR =
-      "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
-    console.log(URLporESTRENAR);
-    fetch(URLporESTRENAR, options)
-      .then((response) => response.json())
-      .then((response) => {
-        setDatos(response.results);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+function Slider({url, title}) {
+const{data, loading} = useFetch(url);
 
   const responsive = {
     desktop: {
@@ -55,7 +36,7 @@ function Slider() {
 
   return (
     <>
-      <h1>Por Estrenar</h1>
+      <h1>{title}</h1>
       <Carousel
         swipeable={true}
         draggable={true}
@@ -67,8 +48,8 @@ function Slider() {
         containerClass="carousel-container"
         itemClass="carousel-item-padding-40-px"
       >
-        {datos ? (
-          datos.map((el) => {
+        {!loading ? (
+          data.map((el) => {
             return (
               <CardPelicula
                 key={el.id}
