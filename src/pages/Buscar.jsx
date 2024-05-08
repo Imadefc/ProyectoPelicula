@@ -105,6 +105,7 @@ function Buscar({ varGlobales, setVarGlobales }) {
                     key={el.id}
                     year={el.release_date}
                     img={el.poster_path}
+                    id={el.id}
                     descrp={el.overview}
                     title={el.title}
                     handleBotonDer={() =>
