@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import SectionLista from "../components/SectionLista";
 import style from "../style/Listas.module.css";
 import Aside from "../components/Aside";
-import Ajustes from "./Ajustes";
+import Ajustes from "../components/Ajustes";
 import Footer from "../components/Footer"
 
 function Listas() {

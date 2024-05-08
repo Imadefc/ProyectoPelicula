@@ -10,7 +10,7 @@ import OpcionesIviews from "./pages/OpcionesIviews";
 import { opcionesI } from "./services/opcionesI";
 import Contactos from "./pages/Contactos";
 import { Idcontext } from "./context/idcontext";
-import Ajustes from "./pages/Ajustes";
+import Ajustes from "./components/Ajustes";
 import PerfilPelicula from "./components/PerfilPelicula";
 import {Layout} from './Layout'
 
