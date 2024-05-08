@@ -13,6 +13,7 @@ import Contactos from "./pages/Contacto";
 
 
 function App() {
+
   const [ajustes, setAjustes]=useState({
     oscuro:localStorage.getItem("oscuro"),
     adult:localStorage.getItem("adult"),
