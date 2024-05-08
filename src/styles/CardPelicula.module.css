@@ -118,12 +118,12 @@
 }
 .article .contenedorInformacion h3{
     width: 80%;
-    color: black;
+    
     margin-left: auto;
     margin-right: auto;
 }
 .article .contenedorInformacion h2{
-    color: black;
+    
 }
 .article:hover .contenedorInformacion{
     bottom: 90px;

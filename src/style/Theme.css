@@ -77,7 +77,19 @@
     color: white;
     background-color:rgba(8, 8, 22, 1);
   }
+  h2{
+    color: black;
+  }
+  h3{
+    color: black;
+  }
 
+  .theme-dark h3{
+    color: white;
+  }
+  .theme-dark h2{
+    color: white;
+  }
   .theme-dark footer div a {
     color: white ;
     box-shadow: rgb(98, 48, 207) 0px 2px 15px 0px;
