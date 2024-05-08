@@ -12,27 +12,31 @@ import Contactos from "./pages/Contactos";
 import { Idcontext } from "./context/idcontext";
 import Ajustes from "./pages/Ajustes";
 import PerfilPelicula from "./components/PerfilPelicula";
-import {Layout} from './Layout'
+import { Layout } from "./Layout";
 
 function App() {
+  const [ajustes, setAjustes] = useState({
+    oscuro: localStorage.getItem("oscuro"),
+    adult: localStorage.getItem("adult"),
+    lenguaje: localStorage.getItem("lenguaje"),
+  });
 
-  const [ajustes, setAjustes]=useState({     oscuro:localStorage.getItem("oscuro"),     adult:localStorage.getItem("adult"),     lenguaje:localStorage.getItem("lenguaje")   })
-
-  const { selectedMovie } = useContext (Idcontext)
+  const { selectedMovie } = useContext(Idcontext);
 
   return (
     <>
-    
-      {selectedMovie && <PerfilPelicula id={ selectedMovie } />}
-        
-        <Routes>
-          <Route path="ajustes"
-           element={
-           <Layout>
-           <Ajustes />
-           </Layout>
-           }/>
-          <Route
+      {selectedMovie && <PerfilPelicula id={selectedMovie} />}
+
+      <Routes>
+        <Route
+          path="ajustes"
+          element={
+            <Layout>
+              <Ajustes />
+            </Layout>
+          }
+        />
+        <Route
           path="listas"
           element={
             <Layout>
@@ -64,7 +68,23 @@ function App() {
             </Layout>
           }
         />
-        </Routes>
+
+        <Route path="*" element={<Footer />} />
+        {opciones.map((opcion, index) => (
+          <Route
+            key={index}
+            path={"/" + opcion.name.toLowerCase()}
+            element={<OpcionesView {...opcion} />}
+          />
+        ))}
+        {opcionesI.map((opcionI, indexI) => (
+          <Route
+            key={indexI}
+            path={"/" + opcionI.nameI.toLowerCase()}
+            element={<OpcionesIviews {...opcionI} />}
+          />
+        ))}
+      </Routes>
     </>
   );
 }

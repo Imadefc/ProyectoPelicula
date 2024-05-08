@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import "../style/OpcionesView.css";
 
 function OpcionesView({ name, description, listado }) {
   
@@ -15,10 +16,13 @@ function OpcionesView({ name, description, listado }) {
   
   return (
     <div className='opcionesViewContainer'>
-      <h1>{name}</h1> 
-      <h2>{description}</h2>
+      <div className='encabezado_opciones'>
+        <h1>{name}</h1> 
+        <h2 className='descripcion_opciones'>{description}</h2>
+      </div>
+     
       {listado && Object.keys(listado).length > 0 && (
-          <ul>
+          <ul className='listado_preguntas'>
           {Object.keys(listado).map((pregunta, index) => {
             if (pregunta.includes('pregunta')){
               const numeroPregunta = pregunta.replace('pregunta', '');
@@ -30,7 +34,7 @@ function OpcionesView({ name, description, listado }) {
                     {listado[pregunta]}
                   </p>
                   {respuesta[pregunta] && (
-                    <p>{listado[respuestaKey]}</p>
+                    <p className='respuesta_opciones'>{listado[respuestaKey]}</p>
                   )}
                 </li>
               );
@@ -39,7 +43,10 @@ function OpcionesView({ name, description, listado }) {
           })}
         </ul>
       )}
+      <div className='volver_atras_opciones'>
       <Link to={'/'} className='link_texto_views' >Ir a la pagina principal</Link>
+      </div>
+     
     </div>
   );
 }

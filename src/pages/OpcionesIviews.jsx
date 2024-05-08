@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "../styles/OpcionesIviews.css";
 
-
-function OpcionesIviews({ nameI, imageI, descriptionI }) {
+function OpcionesIviews({ nameI, imageI, descriptionI, imagen_ejemplo }) {
 
 
   return (
@@ -13,8 +13,16 @@ function OpcionesIviews({ nameI, imageI, descriptionI }) {
       </div>
         <div className='body_opcionesIviews'>
           <p>{descriptionI}</p>
-            <Link to={'/'} className='link_imagenes_views' >Ir a la pagina principal</Link>
         </div>
+      
+        <div className='imagen_opcionI_ejemplo'>
+          <img className='imagen_opcionI_ejemplo' src={imagen_ejemplo} alt=""/>
+        </div>
+
+        <div className='volver_atras'>
+        <Link to={'/'} className='link_imagenes_views' >Ir a la pagina principal</Link>
+        </div>
+       
        
     </div>
   )
