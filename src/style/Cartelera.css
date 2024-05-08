@@ -1,0 +1,185 @@
+.contenedor_botones_slider_izq {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 400px;
+    position: relative;
+    bottom: 180px;
+    right: 200px;
+    left: -250px;
+  }
+
+  .contenedor_botones_slider_der {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 400px;
+    position: relative;
+    bottom: 380px;
+    right: 0px;
+    left: 250px;
+  }
+  
+  .pantalla_cartelera {
+    width: 300px;
+    height: 410px;
+    background-color: grey;
+    box-shadow: 1px 3px 35px 10px black;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 150px;
+  }
+  
+  .pantalla_cartelera > .cartelera_opcion_1 {
+    width: 290px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 0.5px solid black;
+    box-sizing: border-box;
+    -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+  }
+  
+  
+  .minipantallas_opciones_peliculas {
+    width: 600px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .minipantallas_opciones_peliculas > img {
+    width: 140px;
+    height: 80px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    box-shadow: 1px 3px 10px 5px black;
+    filter: brightness(20%);
+  }
+  
+  .cartelera_opcion_1:hover {
+    filter: brightness(110%);
+  }
+  
+  .cartelera_opcion_2:hover {
+    filter: brightness(110%);
+  }
+  
+  .cartelera_opcion_3:hover {
+    filter: brightness(110%);
+  }
+  
+  .cartelera_opcion_4:hover {
+    filter: brightness(110%);
+  }
+  
+  .contenedor_general_slider {
+    width: 30%;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 2px 10px 2px;
+  }
+
+  
+.slider_der {
+    width: 60px;
+    height: 200px;
+    border-radius: 20px;
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(80, 196, 237, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+  }
+  
+  .slider_der:hover {
+    transform: scale(1.1);
+  }
+
+  .slider_izq {
+    width: 60px;
+    height: 200px;
+    border-radius: 20px;
+    margin-right: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(80, 196, 237, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+  }
+  
+  .slider_izq:hover {
+    transform: scale(1.1);
+  }
+
+  
+.rectangulos-container{
+    width: 10vw;
+    height: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    position: relative;
+    bottom: 220px;
+  }
+  
+  .rectangulo{
+    width: 20px;
+    height: 10px;
+    background-color: grey;
+    display: flex;
+    border-radius: 5px;
+  }
+
+  .rectangulo.iluminado{
+    width: 20px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgba(80, 196, 237, 1);
+    display: flex;
+  }

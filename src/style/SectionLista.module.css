@@ -9,6 +9,18 @@
     margin-bottom:3rem;
     font-size:40px;
 }
+@media(max-width:1600px){
+    .contenedor{
+        grid-template-columns:1fr 1fr 1fr;
+        width:fit-content;
+    }
+}
+@media(max-width:1250px){
+    .contenedor{
+        grid-template-columns:1fr 1fr;
+        width:fit-content;
+    }
+}
 
 @media(max-width:820px){
     .contenedor{

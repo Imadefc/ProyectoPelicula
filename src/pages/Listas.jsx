@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SectionLista from "../components/SectionLista";
 import style from "../style/Listas.module.css";
 import Aside from "../components/Aside";
+import Ajustes from "./Ajustes";
+import Footer from "../components/Footer"
 
 function Listas() {
   const [visto, setVisto] = useState(null);
@@ -20,6 +22,7 @@ function Listas() {
   }, [visto, verMasTarde]);
   return (<>
       <Aside/>
+     
       
         
       <article className={style.contenedor}>
@@ -50,7 +53,7 @@ function Listas() {
           />
         )}
       </article>
-    
+      <Footer/>
   </>
     
   );
