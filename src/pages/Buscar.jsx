@@ -135,7 +135,10 @@ function Buscar({ varGlobales, setVarGlobales }) {
               );
             })}
           {datos && <span></span>}
-          {datos && (
+          
+        </div>
+        <div className="botonesAnteriroSiguiete">
+        {datos && (
             <div className={style.page}>
               <a onClick={handleAnterior}>Anterior</a>
               <p>{page.page}</p>
@@ -143,7 +146,7 @@ function Buscar({ varGlobales, setVarGlobales }) {
             </div>
           )}
         </div>
-
+        
           <div className={style.contenedor_home_principal}>
         {!datos && <Cartelera />}
           </div>
