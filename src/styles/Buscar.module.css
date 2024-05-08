@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&family=Montez&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Gothic&family=Montez");
+
+
 .Buscador {
     background: #50C4ED;
     border-radius: 50px;
@@ -147,6 +151,51 @@ body{
     color: white;
     letter-spacing: 1px;
 }
+
+.mensaje{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(19,19,19,0.7);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1; 
+}
+
+.mensaje_footer{
+    width: 100vw;
+    height: 200px;
+    background-color: rgba(19,19,19,0.7);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1; 
+}
+
+.mensaje > h1 {
+    font-family: "Montez";
+    font-size: 200px;
+    background: linear-gradient(90deg, #00d1ff -3.19%, #0085ff 91.19%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: absolute;
+    top: 180px;
+    width: fit-content;
+    height: fit-content;
+    animation-duration: 3s;
+    animation-name: expansion;
+}
+
+@keyframes expansion {
+    from{ transform : scale(1)}
+    to{transform : scale(2)}
+}
+
 @media(max-width:1470px){
     .contenedor{
         grid-template-columns: repeat(3,1fr);

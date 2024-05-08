@@ -1,9 +1,9 @@
-import React from 'react'
 import { opcionesI } from '../services/opcionesI'
 import { opciones } from '../services/opciones'
 import OpcionesI from './OpcionesI'
 import Opciones from './Opciones'
 import style from "../style/Footer.module.css"
+
 
 function Footer() {
   return (

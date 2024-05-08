@@ -23,6 +23,7 @@
     gap: 50px;
 }
 
+
 @media(max-width:1200px){
     .contenedor{
         flex-direction: column;

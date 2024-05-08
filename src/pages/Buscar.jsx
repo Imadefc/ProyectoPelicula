@@ -1,9 +1,10 @@
 import style from "../styles/Buscar.module.css";
 import CardPelicula from "../components/CardPelicula";
 import Aside from "../components/Aside";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Ajustes from "./Ajustes";
 import PerfilPelicula from "../components/PerfilPelicula";
+import audioFile from "../assets/audios/deep-strange-whoosh-183845.mp3";
 import {
   customHooksHandleAnterior,
   customHooksHandleBuscar,
@@ -12,7 +13,6 @@ import {
 } from "../services/customHooks";
 import Footer from "../components/Footer";
 import Cartelera from "../components/Cartelera";
-import { BiSolidChevronLeft, BiSolidChevronRight } from "react-icons/bi";
 import fondo from "../assets/imagenes/ir_solo_al_cinex_razones_por_las_que_deberxas_intentarlox.jpg_1902800913.webp";
 
 const options = {
@@ -30,6 +30,15 @@ function Buscar({ varGlobales, setVarGlobales }) {
   const [tituloGuardado, setTituloGuardado] = useState("");
   const [numRes, setNumRes] = useState(null);
   const [page, setPage] = useState({ page: null, pageMax: null });
+  const [mensajeBienvenida, setMensajeBienvenida] = useState (true)
+
+  useEffect(() =>{
+    const timer = setTimeout(() => {
+      setMensajeBienvenida(false)
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   function handlebuscar() {
     customHooksHandleBuscar(
@@ -47,13 +56,18 @@ function Buscar({ varGlobales, setVarGlobales }) {
     }
   }
 
-  const manejarClick = (direccion) => {
-    cambiarImagen(direccion);
-    setTemporizadorActivo(false);
-    setTimeout(() => {
-      setTemporizadorActivo(true);
-    }, 15000);
-  };
+  function mensajeBienvenidaFuncion (event) {
+      setTimeout(() => {
+        setMensajeBienvenida(false)
+      }, 2000);
+  }
+
+  useEffect(() => {
+   if(mensajeBienvenida){
+    const audio = new Audio(audioFile)
+    audio.play()
+   };
+  }, [mensajeBienvenida]);
 
   function handleSiguiente() {
     customHooksSiguiente(page, setPage, tituloGuardado, setDatos, setPage);
@@ -68,6 +82,8 @@ function Buscar({ varGlobales, setVarGlobales }) {
   return (
     <>
       <Aside />
+      {mensajeBienvenida && <div className={style.mensaje}><h1 >CineSearch</h1>
+      </div>}
 
       <div className={style.contenedor_imagen}>
         <img src={fondo} alt="" width={"100%"} />
@@ -133,6 +149,7 @@ function Buscar({ varGlobales, setVarGlobales }) {
           </div>
        
       </article>
+      {mensajeBienvenida && <div className={style.mensaje_footer}></div>}
       <Footer />
     </>
   );
