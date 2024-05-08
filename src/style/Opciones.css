@@ -8,10 +8,12 @@
     font-size: 35px;
     white-space: nowrap;
     margin-top: 5px;
-    box-shadow: black 0px 7px 15px 1px;
+    box-shadow: black 0px 2px 20px 2px;
     border-radius: 10px;
     transition: all 0.3s ;
     text-decoration: none;
+    background-color: black;
+    
   }
 
   .link:hover{
@@ -20,6 +22,6 @@
   }
 
   .opcionesContainer a{
-    color: black;
+    color: white;
   }
   

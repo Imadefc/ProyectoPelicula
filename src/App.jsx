@@ -22,7 +22,7 @@ function App() {
 
   return (
     <>
-
+    
       {selectedMovie && <PerfilPelicula id={ selectedMovie } />}
         
         <Routes>
