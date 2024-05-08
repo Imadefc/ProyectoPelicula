@@ -28,7 +28,6 @@ function Aside() {
   return (
     <>
       <aside className={style.contenedor}>
-        {mensajeBienvenida && <div className={style.mensaje}></div>}
 
         <h1 className={style.titulo}>CineSearch</h1>
         <div className={style.opciones}>

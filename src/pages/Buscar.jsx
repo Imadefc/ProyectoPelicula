@@ -32,12 +32,15 @@ function Buscar({ varGlobales, setVarGlobales }) {
   const [page, setPage] = useState({ page: null, pageMax: null });
   const [mensajeBienvenida, setMensajeBienvenida] = useState (true)
 
-  useEffect(() =>{
-    const timer = setTimeout(() => {
-      setMensajeBienvenida(false)
-    }, 2000);
+  useEffect(() => {
+    const audio = new Audio(audioFile);
+    if (mensajeBienvenida) {
+      audio.play();
+    }
 
-    return () => clearTimeout(timer);
+    setTimeout(() => {
+      setMensajeBienvenida(false);
+    }, 2000);
   }, []);
 
   function handlebuscar() {
@@ -50,24 +53,12 @@ function Buscar({ varGlobales, setVarGlobales }) {
       setBusqueda
     );
   }
+
   function handleEnter(event) {
     if (event.code === "Enter") {
       handlebuscar();
     }
   }
-
-  function mensajeBienvenidaFuncion (event) {
-      setTimeout(() => {
-        setMensajeBienvenida(false)
-      }, 2000);
-  }
-
-  useEffect(() => {
-   if(mensajeBienvenida){
-    const audio = new Audio(audioFile)
-    audio.play()
-   };
-  }, [mensajeBienvenida]);
 
   function handleSiguiente() {
     customHooksSiguiente(page, setPage, tituloGuardado, setDatos, setPage);
@@ -76,15 +67,16 @@ function Buscar({ varGlobales, setVarGlobales }) {
   function handleAnterior() {
     customHooksHandleAnterior(page, tituloGuardado, setDatos, setPage);
   }
+
   function handleControlPerfilPelicula(e) {
     console.log(e.currentTarget.name);
   }
+
   return (
     <>
+      {mensajeBienvenida && <div className={style.mensaje}><h1 >CineSearch</h1></div>}
       <Aside />
-      {mensajeBienvenida && <div className={style.mensaje}><h1 >CineSearch</h1>
-      </div>}
-
+    
       <div className={style.contenedor_imagen}>
         <img src={fondo} alt="" width={"100%"} />
       </div>
@@ -101,15 +93,18 @@ function Buscar({ varGlobales, setVarGlobales }) {
           className={style.Buscador}
         />
       </div>
+
       <img
         onClick={handlebuscar}
         className={style.icono}
         width={"100px"}
         src="https://i.ibb.co/1dPp0wr/imagen-2024-04-04-011057169.png"
       />
+
       {numRes && (
         <h3 className={style.numRes}>Hay {numRes} elementos encontrados </h3>
       )}
+
       <article className={style.contenedor}>
         <div className={style.card_pelicula_buscador}>
           {datos &&
@@ -135,24 +130,25 @@ function Buscar({ varGlobales, setVarGlobales }) {
               );
             })}
           {datos && <span></span>}
-          
         </div>
-        <div className="botonesAnteriroSiguiete">
+
         {datos && (
-            <div className={style.page}>
-              <a onClick={handleAnterior}>Anterior</a>
-              <p>{page.page}</p>
-              <a onClick={handleSiguiente}>Siguiente</a>
-            </div>
-          )}
-        </div>
-        
-          <div className={style.contenedor_home_principal}>
-        {!datos && <Cartelera />}
+          <div className={style.page_padre}>
+               <div className={style.page}>
+            <a onClick={handleAnterior}>Anterior</a>
+            <p>{page.page}</p>
+            <a onClick={handleSiguiente}>Siguiente</a>
           </div>
-       
+          </div>
+         
+        )}
+
+        <div className={style.contenedor_home_principal}>
+          {!datos && <Cartelera />}
+        </div>
       </article>
-      {mensajeBienvenida && <div className={style.mensaje_footer}></div>}
+
+      {mensajeBienvenida && <div className={style.mensaje_footer}></div>} 
       <Footer />
     </>
   );

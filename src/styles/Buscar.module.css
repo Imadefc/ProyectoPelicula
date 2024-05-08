@@ -48,7 +48,6 @@
     display: flex;
     font-size: 40px;
     gap: 20px;
-    left: 220px;
     background-color: #50C4ED;
     border-radius: 47px;
     width: fit-content;
@@ -59,6 +58,23 @@
     position: relative;
     margin-top: 1em;
 }
+.page_padre{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 40px;
+    gap: 20px;
+    border-radius: 47px;
+    width: 100vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    position: relative;
+    margin-top: 1em;
+}
+
 .page a{
     cursor: pointer;
 }
@@ -154,7 +170,7 @@ body{
 
 .mensaje{
     width: 100vw;
-    height: 100vh;
+    height: 130vh;
     background-color: rgba(19,19,19,0.7);
     display: flex;
     align-items: center;
@@ -184,7 +200,7 @@ body{
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: absolute;
-    top: 180px;
+    top: 220px;
     width: fit-content;
     height: fit-content;
     animation-duration: 3s;
