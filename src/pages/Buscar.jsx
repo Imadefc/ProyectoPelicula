@@ -116,7 +116,6 @@ function Buscar() {
                 title={el.title}
                 handleBotonDer={()=>handleBotonAñadirVistoMastarde("mastarde",el)}
                 handleBotonIzq={()=>handleBotonAñadirVistoMastarde("visto",el)}
-             
               />
             );
           })}
