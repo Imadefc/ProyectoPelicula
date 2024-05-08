@@ -6,16 +6,23 @@
    gap: 100px;
    margin-top: 5rem;
    padding-bottom: 2rem;
-   border-top: 1px solid lightgray;
    padding-top: 2rem;
    -webkit-box-shadow: 2px -8px 79px -40px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px -8px 79px -40px rgba(0,0,0,0.75);
     box-shadow: 2px -8px 79px -40px rgba(0,0,0,0.75);
 }
-.contenedorInterior{
+
+.contenedorInterior1{
     display: flex;
-    gap: 20px;
+    gap: 40px;
+    font-size: small;
 }
+
+.contenedorInterior2{
+    display: flex;
+    gap: 50px;
+}
+
 @media(max-width:1200px){
     .contenedor{
         flex-direction: column;
