@@ -90,7 +90,7 @@ function Buscar({ varGlobales, setVarGlobales }) {
           onKeyDown={handleEnter}
           value={busqueda}
           type="search"
-          placeholder="Busca tu pelicula en CineSearh"
+          placeholder="Busca tu pelicula en CineSearch"
           className={style.Buscador}
         />
       </div>
