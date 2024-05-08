@@ -6,7 +6,8 @@ import CardPelicula from "../components/CardPelicula";
 import style from "../styles/Populares.module.css"
 import Ajustes from './Ajustes';
 import { handleBotonAñadirVistoMastarde } from '../services/customHooks';
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
+import Slider from '../components/Slider';
 const options = {
   method: "GET",
   headers: {
@@ -34,7 +35,6 @@ const options = {
   return (
     <>
     <Aside/>
-    
     <h1 className={style.tituloPopulares}>Titulos Populares</h1>
 
   
@@ -58,6 +58,11 @@ const options = {
           );
         })}
       </article>
+      <div className={style.contenedorcarruseles}>
+      <Slider url={"https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1"} className={style.sliders} title={"Por estrenar"}/>
+    <Slider url={"https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1"} className={style.sliders} title={"Cartelera"}/>
+    <Slider url={"https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1"} className={style.sliders} title={"Mejor valoradas"}/> 
+    </div>
       <Footer/>
     </>
   );
