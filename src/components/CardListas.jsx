@@ -13,6 +13,7 @@ function CardLista({name, arrayContr,setArrayContr,id,array,setArray, botonIzq,b
   }
   function handleBotonDer(event) {
     const id= event.currentTarget.id;
+    setSelectedMovie(null)
     const obj=array.filter((el)=>{
       return id==el.id
     })
@@ -38,6 +39,7 @@ function CardLista({name, arrayContr,setArrayContr,id,array,setArray, botonIzq,b
   function handleBotonIzq(event) {
     const id= event.currentTarget.id;
     eliminarContenido(id)
+    setSelectedMovie(null);
     console.log(event.currentTarget.name);
   }
   function eliminarContenido(id){
@@ -49,12 +51,14 @@ function CardLista({name, arrayContr,setArrayContr,id,array,setArray, botonIzq,b
 
   return (
     <article className={style.article} id={name} onClick={() => {
-      setSelectedMovie (id)
+      
     }}>
       <div className={style.poster}>
       {img==null &&
           <img
-          onClick={handleControl}
+          onClick={() => {
+      
+    }}
           className={style.img}
           src={"https://i0.wp.com/capri.org.au/wp-content/uploads/2017/10/poster-placeholder.jpg?ssl=1"}
           alt={title}
@@ -62,7 +66,9 @@ function CardLista({name, arrayContr,setArrayContr,id,array,setArray, botonIzq,b
          }
          {img!=null &&
           <img
-          onClick={handleControl}
+          onClick={() => {
+      setSelectedMovie (id)
+    }}
           className={style.img}
           src={"https://image.tmdb.org/t/p/w600_and_h900_bestv2"+img}
           alt={title}
