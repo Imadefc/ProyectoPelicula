@@ -24,6 +24,13 @@
     margin-right: auto;
     overflow: visible;
 }
+.contenedorcarruseles div button{
+    background-color: #00d1ff;
+    color: black;
+}
+.contenedorcarruseles div button::before{
+    color: black;
+}
 .idioma{
     position: absolute;
     right: 200px;
