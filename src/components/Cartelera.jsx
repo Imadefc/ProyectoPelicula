@@ -6,6 +6,7 @@ function Cartelera() {
 
   const [indiceImagen, setIndiceImagen] = useState(1);
   const [temporizadorActivo, setTemporizadorActivo] = useState(true);
+  const [peliculaClicadaId, setPeliculaClicadaId] = useState(null);
 
   useEffect(() => {
     const options = {
@@ -62,12 +63,19 @@ function Cartelera() {
     ));
   };
 
+  const renderizarPerfilPeliculas = () => {
+    if (peliculaClicadaId) {
+      return <PerfilPeliculas id={peliculaClicadaId} />;
+    }
+    return null;
+  };
+
   return (
     <>
       <div className="contenedor_general_slider">
         <div className="pantalla_cartelera">
           <img
-            className="cartelera_opcion_1"
+            className="cartelera_opcion_1 "
             src={
               indiceImagen === 1
                 ? "https://es.web.img2.acsta.net/pictures/14/07/09/10/00/277089.jpg"
@@ -91,6 +99,7 @@ function Cartelera() {
 
         <div className="rectangulos-container">{renderizarRectangulos()}</div>
       </div>
+      {renderizarPerfilPeliculas()}
     </>
   );
 }

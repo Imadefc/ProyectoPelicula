@@ -24,7 +24,7 @@ function DuracionPelicula({ duracionEnMinutos }) {
   );
 }
 
-function PerfilPelicula({ id }) {
+function PerfilPelicula({ id, onClose }) {
   const { basicInfo, credits, gallery, plataforms, reviews, loading } =
     useIdHook(id);
 

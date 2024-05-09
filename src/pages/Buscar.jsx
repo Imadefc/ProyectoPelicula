@@ -2,8 +2,7 @@ import style from "../styles/Buscar.module.css";
 import CardPelicula from "../components/CardPelicula";
 import Aside from "../components/Aside";
 import { useEffect, useState } from "react";
-import Ajustes from "./Ajustes";
-import PerfilPelicula from "../components/PerfilPelicula";
+
 import audioFile from "../assets/audios/deep-strange-whoosh-183845.mp3";
 import {
   customHooksHandleAnterior,
@@ -35,7 +34,6 @@ function Buscar({ varGlobales, setVarGlobales }) {
   useEffect(() => {
     const audio = new Audio(audioFile);
     if (mensajeBienvenida) {
-      console.log("Bienvenido");
       audio.play();
     }
 
