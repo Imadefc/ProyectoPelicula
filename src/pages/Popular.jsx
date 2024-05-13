@@ -33,7 +33,7 @@ const options = {
   }, []);
   return (
     <>
-    <Aside/>
+    
     
     <h1 className={style.tituloPopulares}>Titulos Populares</h1>
 

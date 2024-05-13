@@ -9,6 +9,7 @@ import OpcionesView from "./pages/OpcionesViews";
 import OpcionesIviews from "./pages/OpcionesIviews";
 import { opcionesI } from "./services/opcionesI";
 import Contactos from "./pages/Contactos";
+import Entrada from "./pages/Entrada";
 
 
 function App() {
@@ -22,11 +23,11 @@ function App() {
         <Routes> 
           <Route path="listas" element={<Listas />} />
           <Route path="popular" element={<Popular />} />
-          <Route path="/" element={<Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />} />
+          <Route path="/" element={<Entrada/>}/>
           <Route path="contacto" element={<Contactos/>}/>
         </Routes>
     </>
   );
 }
-
+//<Route path="/" element={<Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />} />
 export default App;

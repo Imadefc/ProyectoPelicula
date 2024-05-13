@@ -47,7 +47,7 @@ function Buscar({varGlobales,setVarGlobales}) {
   }
   return (
     <>
-      <Aside/>
+      
       
       <div className={style.buscar}>
         <input
