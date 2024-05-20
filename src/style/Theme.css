@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Cera Pro Bold";
+  src: url(./assets/Cera-Pro/Cera\ Pro\ Bold.otf) format();
+}
+
+@font-face {
+  font-family: "Cera Pro Light";
+  src: url(./assets/Cera-Pro/Cera\ Pro\ Light.otf);
+}
+
+@font-face {
+  font-family: "Cera Pro Regular";
+  src: url(./assets/Cera-Pro/Cera\ Pro\ Regular.otf);
+}
+
+@font-face {
+  font-family: "Cera Pro Medium";
+  src: url(./assets/Cera-Pro/Cera\ Pro\ Medium.otf) format("opentypefont");
+}
+
+@font-face {
+  font-family: "Cera Pro Thin";
+  src: url(./assets/Cera-Pro/Cera\ Pro\ Thin.otf);
+}
+
+
+
+/* .theme-dark {
+   
+  } */
+
+  .theme-dark aside h3 {
+    color: white;
+  }
+
+  .theme-dark aside {
+    background-color: rgba(8, 8, 22, 1);
+    box-shadow: rgba(12, 12, 49, 1) 1px 1px 30px 20px;
+  }
+
+  /* rgba(8, 8, 22, 1) azul oscuro
+  rgba(12, 12, 49, 1) azul claro */
+
+  .theme-dark h1 {
+    color: white;
+  }
+
+  .theme-dark input::placeholder {
+    color: white;
+  }
+
+  .theme-dark a {
+    color: white;
+  }
+
+  /* .theme-dark article > div > article > h3 {
+    color: white;
+  } */
+
+  .theme-dark h4{
+    color:black;
+  }
+  
+  .theme-dark p {
+    color: white;
+  }
+
+  .theme-dark {
+    color: white;
+  }
+
+  .theme-dark footer {
+    box-shadow: rgba(12, 12, 49, 1) 1px 1px 30px 20px;
+  }
+
+  .theme-dark footer div {
+    color: white;
+    background-color:rgba(8, 8, 22, 1);
+  }
+  h2{
+    color: black;
+  }
+  h3{
+    color: black;
+  }
+
+  .theme-dark h3{
+    color: white;
+  }
+  .theme-dark h2{
+    color: white;
+  }
+  .theme-dark footer div a {
+    color: white ;
+    box-shadow: rgb(98, 48, 207) 0px 2px 15px 0px;
+    border-radius: 10px;
+    width: 100%;
+    text-decoration: none;
+  }

@@ -1,15 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import style from "../style/CardPelicula.module.css";
 import Votacion from "./Votacion";
+import { Idcontext } from "../context/idcontext";
 
 function CardLista({name, arrayContr,setArrayContr,id,array,setArray, botonIzq,botonDer,andleBotonDer,puntuacion ,year="NotF", img, title, descrp }) {
   const [control, setControl] = useState(true);
+
+  const { setSelectedMovie } = useContext ( Idcontext )
 
   function handleControl() {
     setControl(!control);
   }
   function handleBotonDer(event) {
     const id= event.currentTarget.id;
+    setSelectedMovie(null)
     const obj=array.filter((el)=>{
       return id==el.id
     })
@@ -35,6 +39,7 @@ function CardLista({name, arrayContr,setArrayContr,id,array,setArray, botonIzq,b
   function handleBotonIzq(event) {
     const id= event.currentTarget.id;
     eliminarContenido(id)
+    setSelectedMovie(null);
     console.log(event.currentTarget.name);
   }
   function eliminarContenido(id){
@@ -45,11 +50,15 @@ function CardLista({name, arrayContr,setArrayContr,id,array,setArray, botonIzq,b
   }
 
   return (
-    <article className={style.article} id={name}>
+    <article className={style.article} id={name} onClick={() => {
+      
+    }}>
       <div className={style.poster}>
       {img==null &&
           <img
-          onClick={handleControl}
+          onClick={() => {
+      
+    }}
           className={style.img}
           src={"https://i0.wp.com/capri.org.au/wp-content/uploads/2017/10/poster-placeholder.jpg?ssl=1"}
           alt={title}
@@ -57,7 +66,9 @@ function CardLista({name, arrayContr,setArrayContr,id,array,setArray, botonIzq,b
          }
          {img!=null &&
           <img
-          onClick={handleControl}
+          onClick={() => {
+      setSelectedMovie (id)
+    }}
           className={style.img}
           src={"https://image.tmdb.org/t/p/w600_and_h900_bestv2"+img}
           alt={title}

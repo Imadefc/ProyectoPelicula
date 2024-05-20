@@ -16,8 +16,20 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 54px;
-    
     margin-top: 4rem;
+}
+.contenedorcarruseles{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+}
+.contenedorcarruseles div button{
+    background-color: #00d1ff;
+    color: black;
+}
+.contenedorcarruseles div button::before{
+    color: black;
 }
 .idioma{
     position: absolute;

@@ -1,15 +1,23 @@
-import  { useState } from "react";
+import React, { useContext, useState } from "react";
 import style from "../styles/CardPelicula.module.css";
 import Votacion from "./Votacion";
-import { conseguirDatosPelicula } from "../services/customHooks";
 import { motion } from "framer-motion";
+import { Idcontext } from "../context/idcontext";
 
-function CardPelicula({handleBotonIzq,handleBotonDer,puntuacion ,year="NotF", img, title, descrp }) {
+function CardPelicula({handleBotonIzq,handleBotonDer,puntuacion ,year="NotF", img, title, descrp, id }) {
   const [control, setControl] = useState(true);
+
+  const { setSelectedMovie } = useContext(Idcontext)
+
+  function onClick ( ){
+    setSelectedMovie ( id )
+  }
+
 
 
   return (
-    <motion.article
+    <motion.article 
+      onClick={onClick}
       whileHover={{
         scale:1.1,
         zIndex:100

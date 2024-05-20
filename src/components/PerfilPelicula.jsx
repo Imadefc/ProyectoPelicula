@@ -24,7 +24,7 @@ function DuracionPelicula({ duracionEnMinutos }) {
   );
 }
 
-function PerfilPelicula({ id }) {
+function PerfilPelicula({ id, onClose }) {
   const { basicInfo, credits, gallery, plataforms, reviews, loading } =
     useIdHook(id);
 
@@ -33,7 +33,7 @@ function PerfilPelicula({ id }) {
   const [mostrarPosters, setMostrarPosters] = useState(false);
   const [likes, setLikes] = useState(basicInfo ? basicInfo.vote_count : 0);
   const [likeClicked, setLikeClicked] = useState(false);
-  const { setSelectedMovie } = useContext(Idcontext)
+  const { setSelectedMovie } = useContext(Idcontext);
 
   useEffect(() => {
     setLikes(basicInfo ? basicInfo.vote_count : 0);
@@ -71,20 +71,20 @@ function PerfilPelicula({ id }) {
   };
 
   return (
-    <>
       <div className="todo_perfilPelicula">
         {!loading && (
           <div
             className="contenedor_general_perfilPelicula"
-            style={{
-              backgroundImage: `url('https://image.tmdb.org/t/p/w600_and_h900_bestv2${basicInfo.poster_path}')`,
-              backgroundSize: "1200px 1200px",
-              margin: "10px",
-              padding: "10px",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
           >
+            <div
+    className="contenedor_imagen"
+    style={{
+      backgroundImage: `url('https://image.tmdb.org/t/p/w600_and_h900_bestv2${basicInfo.poster_path}')`,
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat", 
+      backgroundSize:'cover',
+    }}
+  />
             <div
               className="contenedor_volver_atras_perfilPeliculas"
               onClick={handleClosePerfilPelicula}
@@ -239,7 +239,7 @@ function PerfilPelicula({ id }) {
 
             <div className="media_pelicula_perfilPelicula">
               <div className="contenedor_media_perfilPelicula">
-                <h2>Media</h2>
+                <h2>MEDIA</h2>
               </div>
 
               <div className="contenedor_opciones_media_perfilPelicula">
@@ -307,7 +307,6 @@ function PerfilPelicula({ id }) {
           </div>
         )}
       </div>
-    </>
   );
 }
 

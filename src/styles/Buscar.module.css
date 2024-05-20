@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Gothic&family=Montez&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Gothic&family=Montez");
+
+
 .Buscador {
     background: #50C4ED;
     border-radius: 50px;
@@ -8,14 +12,17 @@
     margin-right: auto;
     height: 61px;
     position: block;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     left: 500px;
     top: 200px;
+    font-family: "Cera Pro Regular";
     font-size:30px ;
     border: transparent;
     border-bottom: solid 1px #ccc;
     padding: 10px 10px 10px 30px;
     outline: none;
-    border:1px solid black;
     -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
     -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
     box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
@@ -27,12 +34,13 @@
     margin-bottom: 2rem;
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 80px;
+    
 }
 .icono{
     position: absolute;
     right: 23%;
-    top: 235px;
+    top: 215px;
     width: 50px;
     cursor: pointer;
 }
@@ -40,7 +48,6 @@
     display: flex;
     font-size: 40px;
     gap: 20px;
-    left: 220px;
     background-color: #50C4ED;
     border-radius: 47px;
     width: fit-content;
@@ -49,7 +56,25 @@
     padding-bottom: 5px;
     padding-top: 5px;
     position: relative;
+    margin-top: 1em;
 }
+.page_padre{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 40px;
+    gap: 20px;
+    border-radius: 47px;
+    width: 100vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    position: relative;
+    margin-top: 1em;
+}
+
 .page a{
     cursor: pointer;
 }
@@ -57,20 +82,80 @@
     text-decoration: underline;
 }
 
+.slider_der {
+    width: 60px;
+    height: 200px;
+    border-radius: 20px;
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(80, 196, 237, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+  }
+  
+  .slider_der:hover {
+    transform: scale(1.1);
+  }
+
+  .slider_izq {
+    width: 60px;
+    height: 200px;
+    border-radius: 20px;
+    margin-right: 10px;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(80, 196, 237, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    -webkit-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
+  }
+  
+  .slider_izq:hover {
+    transform: scale(1.1);
+  }
 
 
-.contenedor{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+.contenedor_home_principal{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    height: 500px;
+}
+
+.card_pelicula_buscador{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 15px ;
-    left: 350px;
-    top: 150px;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    margin-left: 35px;
+    margin-right: auto;
+    gap: 20px;
 }
+
+.contenedor_imagen{
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
+    overflow: hidden;
+    filter: blur(4px);
+    top: 180px;
+}
+
 body{
     overflow-x:hidden;
 }
@@ -79,7 +164,54 @@ body{
     width:fit-content;
     font-size:40px;
     top:130px;
+    color: white;
+    letter-spacing: 1px;
 }
+
+.mensaje{
+    width: 100vw;
+    height: 130vh;
+    background-color: rgba(19,19,19,0.7);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1; 
+}
+
+.mensaje_footer{
+    width: 100vw;
+    height: 200px;
+    background-color: rgba(19,19,19,0.7);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1; 
+}
+
+.mensaje > h1 {
+    font-family: "Montez";
+    font-size: 200px;
+    background: linear-gradient(90deg, #00d1ff -3.19%, #0085ff 91.19%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: absolute;
+    top: 220px;
+    width: fit-content;
+    height: fit-content;
+    animation-duration: 3s;
+    animation-name: expansion;
+}
+
+@keyframes expansion {
+    from{ transform : scale(1)}
+    to{transform : scale(2)}
+}
+
 @media(max-width:1470px){
     .contenedor{
         grid-template-columns: repeat(3,1fr);

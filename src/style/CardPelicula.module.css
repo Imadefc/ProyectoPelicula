@@ -85,8 +85,11 @@
     max-height: 400px;
     color: #FFFF;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
     width: 100%;
-    text-align: center;
+    overflow: hidden;
     left: 0;
     transition: 0.5s;
 }
@@ -106,11 +109,16 @@
 .article .contenedorInformacion h3{
     width: 80%;
     color: black;
+    max-height: 200px;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+    margin-top: 1rem;
 }
 .article .contenedorInformacion h2{
     color: black;
+    text-align: center;
 }
 .article:hover .contenedorInformacion{
     bottom:100px;

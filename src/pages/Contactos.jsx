@@ -9,7 +9,7 @@ function Contacto({ id, firstName, lastName, email, additionalInfo, img }) {
       <div style={{ padding: '10px', marginBottom: '10px', textAlign: 'center', flex: '1 0 300px' }}>
       <img src={img} alt={`${firstName} ${lastName}`} style={{ width: '100px', height: '100px', border: '2px solid #ccc', borderRadius: '50%' }} />
       <div>
-        <h3>{firstName} {lastName}</h3>
+        <h4>{firstName} {lastName}</h4>
         <p>
           <FaGithub style={{ marginRight: '5px', verticalAlign: 'middle', color: '#50C4ED' }} /> {/* Icono de GitHub  */}
           <a href={additionalInfo} style={{ color: '#50C4ED', textDecoration: 'none' }}>

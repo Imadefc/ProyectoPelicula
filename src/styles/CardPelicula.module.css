@@ -16,6 +16,9 @@
 }
 .h3{
     font-weight: 100;
+    max-height: 230px;
+    overflow-y: hidden;
+    margin-bottom: 1rem;
 }
 .article .poster{
     position: relative;
@@ -47,11 +50,7 @@
     transition: 0.5s;
     justify-content: center;
     align-items: center;
-    /* Rectangle 1 */
-
     background: linear-gradient(180deg, #50C4ED 0%, rgba(56, 122, 223, 0.85) 46.5%, #50C4ED 97%);
-
-
 }
 
 .bottonMasTarde{
@@ -120,13 +119,10 @@
 }
 .article .contenedorInformacion h3{
     width: 80%;
-    color: black;
     margin-left: auto;
     margin-right: auto;
 }
-.article .contenedorInformacion h2{
-    color: black;
-}
+
 .article:hover .contenedorInformacion{
     bottom: 90px;
 }

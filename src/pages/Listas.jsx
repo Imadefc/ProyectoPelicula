@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import SectionLista from "../components/SectionLista";
 import style from "../style/Listas.module.css";
 import Aside from "../components/Aside";
-import Ajustes from "../components/Ajustes";
+import Ajustes from "./Ajustes";
 import Footer from "../components/Footer"
 
 function Listas() {
@@ -23,12 +23,12 @@ function Listas() {
   return (<>
       
      
-      
+      <Aside/>
         
       <article className={style.contenedor}>
         {!visto && <h1 className= {style.nohay}>No hay peliculas en Visto</h1>}
         {visto && (
-          <SectionLista
+          <SectionLista 
             botonIzq={"Eliminar"}
             botonDer={"Ver más tarde"}
             title={"Lista Vistos"}
