@@ -62,7 +62,7 @@ function Buscar({ varGlobales, setVarGlobales }) {
       <div className="body_buscar">
   
         <Aside />
-
+   
         <div className={style.buscar}>
           <input
             onChange={(e) => {
@@ -74,12 +74,13 @@ function Buscar({ varGlobales, setVarGlobales }) {
             placeholder="Busca tu pelicula en CineSearch"
             className={style.Buscador}
           />
-           <img
+               <img
           onClick={handlebuscar}
           className={style.icono}
           width={"100px"}
           src="https://i.ibb.co/1dPp0wr/imagen-2024-04-04-011057169.png"
         />
+      
         </div>
 
        

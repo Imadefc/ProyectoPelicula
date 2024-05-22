@@ -39,8 +39,6 @@
     
 }
 
-
-
 .icono{
     position: absolute;
     right: 23%;
@@ -48,6 +46,7 @@
     width: 50px;
     cursor: pointer;
 }
+
 .page{
     display: flex;
     font-size: 40px;
@@ -244,21 +243,145 @@
         left:590px;
     }
   }
-  @media (max-width: 755px) {
+  @media (max-width: 740px) {
    
     .icono{
         left:580px;
     }
   }
-  @media (max-width: 755px) {
+  @media (max-width: 730px) {
    
     .icono{
         left:570px;
     }
   }
-  @media (max-width: 755px) {
+  @media (max-width:720px) {
    
     .icono{
         left:560px;
+    }
+  }
+  @media (max-width:705px) {
+   
+    .icono{
+        left:550px;
+    }
+  }
+
+  @media (max-width:695px) {
+   
+    .icono{
+        left:540px;
+    }
+  }
+  @media (max-width:682px) {
+   
+    .icono{
+        left:530px;
+    }
+  }
+
+  @media (max-width:670px) {
+   
+    .icono{
+        left:520px;
+    }
+  }
+
+
+  @media (max-width:660px) {
+   
+    .icono{
+        left:510px;
+    }
+  }
+
+
+  @media (max-width:650px) {
+   
+    .icono{
+        left:500px;
+    }
+  }
+
+  @media (max-width:637px) {
+   
+    .icono{
+        left:490px;
+    }
+  }
+  @media (max-width:625px) {
+   
+    .icono{
+        left:480px;
+    }
+  }
+  @media (max-width:615px) {
+   
+    .icono{
+        left:470px;
+    }
+  }
+  @media (max-width:600px) {
+   
+    .icono{
+        left:460px;
+    }
+  }
+  @media (max-width:590px) {
+   
+    .icono{
+        left:450px;
+    }
+  }
+  @media (max-width:577px) {
+   
+    .icono{
+        left:440px;
+    }
+  }
+  @media (max-width:566px) {
+   
+    .icono{
+        left:430px;
+    }
+  }
+  @media (max-width:556px) {
+   
+    .icono{
+        left:410px;
+    }
+  }
+
+  @media (max-width:532px) {
+   
+    .icono{
+        left:390px;
+    }
+  }
+  @media (max-width:508px) {
+   
+    .icono{
+        left:370px;
+    }
+  }
+
+  @media (max-width:480px) {
+   
+    .icono{
+        left:340px;
+    }
+  }
+
+  @media (max-width:450px) {
+   
+    .icono{
+        left:310px;
+    }
+  }
+  @media (max-width:417px) {
+   
+    .icono{
+        left:300px;
     }
   }

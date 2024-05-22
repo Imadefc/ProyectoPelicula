@@ -21,7 +21,7 @@
 
 .contenedorInterior2{
     display: flex;
-    gap: 20px;
+    gap: 35px;
     width: min-content;
 }
 
@@ -44,8 +44,10 @@
     .contenedorInterior1{
         flex-direction: column;
         gap: 30px;
+        width: min-content;
     }
     .contenedorInterior2{
         flex-direction: column;
+        width: min-content;
     }
 }
