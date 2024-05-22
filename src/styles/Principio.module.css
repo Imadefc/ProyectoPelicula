@@ -6,6 +6,9 @@
     height: 100vh;
     width: 100vw;
     gap: 100px;
+    background-image: url('https://i.pinimg.com/originals/c5/b5/24/c5b524ff9dff88de2ef97bf11b63c3d2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .contenedor{
     width: 200px;
@@ -42,9 +45,11 @@ box-shadow: 0px 4px 34px 3px rgba(1, 251, 251, 0.75);
 }
 .iconoMas{
     width: 180px;
+    background-color: white;
 }
 .contenedorIconoMas{
     width: 200px;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,4 +112,28 @@ form{
 }
 .contenedorParametro{
     margin-bottom: 20px;
+}
+.imgCerrar{
+    width: 20px;
+}
+.imgCerrar:hover{
+    scale: 1.1;
+}
+.contenedorCerrar{
+    margin: 10px;
+    display: flex;
+    width: 95%;
+    justify-content: flex-end;
+
+}
+.botonEnviar{
+    border: none; 
+    color: black; 
+    padding: 14px 28px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    background-color: white; border: 2px solid #007bff;
+}
+.botonEnviar:hover{
+    background: #125c6e; color: white;
 }

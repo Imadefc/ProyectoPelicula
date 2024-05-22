@@ -17,6 +17,11 @@ function UsuariosPrincipio() {
 
         {control && <article className={style.fondoContenedorFormulario} >
             <section className={style.contenedorFormularioPrincipio}>
+            <div className={style.contenedorCerrar}>
+
+                <img className={style.imgCerrar} onClick={()=>setControl(!control)} src='https://i.ibb.co/GJVcntQ/cerrar.png'>
+                </img>
+            </div>
                 <form>
                     
                     <div className={style.contenedorParametro}>
@@ -53,6 +58,7 @@ function UsuariosPrincipio() {
                             <option >Ruso</option>
                         </select>
                     </div>
+                    <button className={style.botonEnviar} type='submit'>Crear</button>
                 </form>
             </section>
         </article>}
