@@ -67,7 +67,7 @@ function Contactos() {
     <>
       <Aside />
 
-      <div className="body_contacto" style={{height:"70vh"}}>
+      <div className="body_contacto" style={{height:"100%"}}>
         <div
           style={{
             display: "flex",
