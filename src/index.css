@@ -23,8 +23,12 @@
   src: url(../src/assets/Cera-Pro/Cera\ Pro\ Thin.otf);
 }
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  width: 100%;
   font-family: "Cera Pro Regular";
 }
 .botonesAnteriroSiguiete{

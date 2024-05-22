@@ -5,7 +5,7 @@ function OpcionesI ({ imageI, nameI }) {
 
     return (
         <div className='opcionesIcontainer'>
-          <Link className='linkI' to={`/${nameI}`}> <img className='imagenes_footer' src={imageI} alt={nameI} /><h3 className='nombres'>{nameI}</h3> </Link>
+          <Link className='linkI' to={`/${nameI}`}> <img className='imagenes_footer' src={imageI} alt={nameI} /> </Link>
       </div> 
     );
   }

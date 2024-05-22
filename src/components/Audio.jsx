@@ -12,7 +12,7 @@ function Audio() {
       const timer = setTimeout(() => {
         setMensajeBienvenida(false);
         setAudioMensaje(false);
-      }, 2000); // Ajusta el tiempo según sea necesario
+      }, 2000);
 
       return () => clearTimeout(timer);
     }

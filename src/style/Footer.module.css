@@ -29,12 +29,19 @@
         flex-direction: column;
         align-items: center;
     }
-    .contenedorInterior{
-        width: fit-content;
+    .contenedorInterior1{
+        width: min-content;
+    }
+    .contenedorInterior2{
+        width: min-content;
+        flex-direction: column;
     }
 }
 @media(max-width:700px){
-    .contenedorInterior{
+    .contenedorInterior1{
+        flex-direction: column;
+    }
+    .contenedorInterior2{
         flex-direction: column;
     }
 }

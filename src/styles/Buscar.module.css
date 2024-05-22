@@ -28,7 +28,6 @@
     box-shadow: 3px 10px 35px -6px rgba(0, 0, 0, 0.6);
 }
 
-
 .buscar{
     width: 80%;
     margin-left: auto;
@@ -173,11 +172,12 @@ body{
 @media(max-width:1470px){
     .contenedor{
         grid-template-columns: repeat(3,1fr);
+        width: 100%;
     }
-    .page{
+    /* .page{
         left: 500px;
         height: fit-content;  
-    }
+    } */
 }
 @media(max-width:1170px){
     .contenedor{

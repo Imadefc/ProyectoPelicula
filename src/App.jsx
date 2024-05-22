@@ -13,7 +13,7 @@ import { Idcontext } from "./context/idcontext";
 import Ajustes from "./pages/Ajustes";
 import PerfilPelicula from "./components/PerfilPelicula";
 import { Layout } from "./Layout";
-import Audio from "./components/Audio"; // Importa el componente Audio
+import Audio from "./components/Audio";
 
 function App() {
   const [ajustes, setAjustes] = useState({
@@ -28,7 +28,7 @@ function App() {
     <>
       <div className="body_app">
         {selectedMovie && <PerfilPelicula id={selectedMovie} />}
-        <Audio /> {/* Coloca el componente Audio aquí */}
+        <Audio />
         <Routes>
           <Route
             path="ajustes"
