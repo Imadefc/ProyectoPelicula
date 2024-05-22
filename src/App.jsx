@@ -13,6 +13,7 @@ import { Idcontext } from "./context/idcontext";
 import Ajustes from "./pages/Ajustes";
 import PerfilPelicula from "./components/PerfilPelicula";
 import { Layout } from "./Layout";
+import Audio from "./components/Audio"; // Importa el componente Audio
 
 function App() {
   const [ajustes, setAjustes] = useState({
@@ -25,66 +26,67 @@ function App() {
 
   return (
     <>
-      {selectedMovie && <PerfilPelicula id={selectedMovie} />}
-
-      <Routes>
-        <Route
-          path="ajustes"
-          element={
-            <Layout>
-              <Ajustes />
-            </Layout>
-          }
-        />
-        <Route
-          path="listas"
-          element={
-            <Layout>
-              <Listas />
-            </Layout>
-          }
-        />
-        <Route
-          path="popular"
-          element={
-            <Layout>
-              <Popular />
-            </Layout>
-          }
-        />
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />
-            </Layout>
-          }
-        />
-        <Route
-          path="contacto"
-          element={
-            <Layout>
-              <Contactos />
-            </Layout>
-          }
-        />
-
-        <Route path="*" element={<Footer />} />
-        {opciones.map((opcion, index) => (
+      <div className="body_app">
+        {selectedMovie && <PerfilPelicula id={selectedMovie} />}
+        <Audio /> {/* Coloca el componente Audio aquí */}
+        <Routes>
           <Route
-            key={index}
-            path={"/" + opcion.name.toLowerCase()}
-            element={<OpcionesView {...opcion} />}
+            path="ajustes"
+            element={
+              <Layout>
+                <Ajustes />
+              </Layout>
+            }
           />
-        ))}
-        {opcionesI.map((opcionI, indexI) => (
           <Route
-            key={indexI}
-            path={"/" + opcionI.nameI.toLowerCase()}
-            element={<OpcionesIviews {...opcionI} />}
+            path="listas"
+            element={
+              <Layout>
+                <Listas />
+              </Layout>
+            }
           />
-        ))}
-      </Routes>
+          <Route
+            path="popular"
+            element={
+              <Layout>
+                <Popular />
+              </Layout>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />
+              </Layout>
+            }
+          />
+          <Route
+            path="contacto"
+            element={
+              <Layout>
+                <Contactos />
+              </Layout>
+            }
+          />
+          <Route path="*" element={<Footer />} />
+          {opciones.map((opcion, index) => (
+            <Route
+              key={index}
+              path={"/" + opcion.name.toLowerCase()}
+              element={<OpcionesView {...opcion} />}
+            />
+          ))}
+          {opcionesI.map((opcionI, indexI) => (
+            <Route
+              key={indexI}
+              path={"/" + opcionI.nameI.toLowerCase()}
+              element={<OpcionesIviews {...opcionI} />}
+            />
+          ))}
+        </Routes>
+      </div>
     </>
   );
 }

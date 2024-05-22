@@ -23,6 +23,33 @@
   src: url(./assets/Cera-Pro/Cera\ Pro\ Thin.otf);
 }
 
+.theme-dark > .body_buscar{
+  background-color: black;
+
+}
+
+.body_buscar{
+  background-color: white;
+}
+
+.theme-dark > .body_popular {
+  background-color: rgba(8, 8, 22, 1);
+}
+
+.theme-dark > .body_contacto {
+  background-color: rgba(8, 8, 22, 1);
+}
+
+.theme-dark > .body_listas {
+  background-color: rgba(8, 8, 22, 1);
+}
+
+.theme-dark > .body_app {
+  background-color: rgba(8, 8, 22, 1);
+}
+
+
+
 
 
 /* .theme-dark {
@@ -67,6 +94,7 @@
 
   .theme-dark {
     color: white;
+    background-color: rgba(8, 8, 22, 1);
   }
 
   .theme-dark footer {

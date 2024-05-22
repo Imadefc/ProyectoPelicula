@@ -1,0 +1,31 @@
+.mensaje{
+    width: 100vw;
+    height: 130vh;
+    background-color: rgba(19,19,19,0.7);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1; 
+}
+
+.mensaje > h1 {
+    font-family: "Montez";
+    font-size: 200px;
+    background: linear-gradient(90deg, #00d1ff -3.19%, #0085ff 91.19%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: absolute;
+    top: 220px;
+    width: fit-content;
+    height: fit-content;
+    animation-duration: 3s;
+    animation-name: expansion;
+}
+
+@keyframes expansion {
+    from{ transform : scale(1)}
+    to{transform : scale(2)}
+}
