@@ -34,9 +34,9 @@
 .titulo {
   width: 350px;
   height: 126px;
-  left: 31px;
+  left: 10px;
   top: 33px;
-  margin-left: 10rem;
+  margin-left: 5rem;
   font-family: "Montez";
   font-style: normal;
   font-weight: 400;
@@ -110,7 +110,7 @@
   display: flex;
   margin-right: 10rem;
   flex-direction: row;
-  gap: 30px;
+  gap: 15px;
   font-family: "Cera Pro Regular";
   font-optical-sizing: auto;
   font-style: normal;

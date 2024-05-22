@@ -74,14 +74,15 @@ function Buscar({ varGlobales, setVarGlobales }) {
             placeholder="Busca tu pelicula en CineSearch"
             className={style.Buscador}
           />
-        </div>
-
-        <img
+           <img
           onClick={handlebuscar}
           className={style.icono}
           width={"100px"}
           src="https://i.ibb.co/1dPp0wr/imagen-2024-04-04-011057169.png"
         />
+        </div>
+
+       
 
         {numRes && (
           <h3 className={style.numRes}>Hay {numRes} elementos encontrados</h3>

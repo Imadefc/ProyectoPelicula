@@ -2,6 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
 import { contactos } from "../services/contactos";
 import Aside from "../components/Aside";
+import Footer from "../components/Footer";
 
 function Contacto({ id, firstName, lastName, email, additionalInfo, img }) {
   return (
@@ -66,7 +67,7 @@ function Contactos() {
     <>
       <Aside />
 
-      <div className="body_contacto">
+      <div className="body_contacto" style={{height:"70vh"}}>
         <div
           style={{
             display: "flex",
@@ -88,6 +89,8 @@ function Contactos() {
           ))}
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }

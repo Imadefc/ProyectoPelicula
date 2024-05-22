@@ -1,5 +1,5 @@
 .contenedor{
-   width: 100%;
+   width: 100vw;
    display: flex;
    background-color: white;
    justify-content: center;
@@ -14,23 +14,26 @@
 
 .contenedorInterior1{
     display: flex;
-    gap: 40px;
+    gap: 10px;
     font-size: small;
+    width: min-content;
 }
 
 .contenedorInterior2{
     display: flex;
-    gap: 50px;
+    gap: 20px;
+    width: min-content;
 }
 
 
-@media(max-width:1200px){
+@media(max-width:1320px){
     .contenedor{
         flex-direction: column;
         align-items: center;
     }
     .contenedorInterior1{
         width: min-content;
+        gap: 25px;
     }
     .contenedorInterior2{
         width: min-content;
@@ -40,6 +43,7 @@
 @media(max-width:700px){
     .contenedorInterior1{
         flex-direction: column;
+        gap: 30px;
     }
     .contenedorInterior2{
         flex-direction: column;
