@@ -38,6 +38,9 @@
     margin-top: 80px;
     
 }
+
+
+
 .icono{
     position: absolute;
     right: 23%;
@@ -157,9 +160,6 @@
     top: 180px;
 }
 
-body{
-    overflow-x:hidden;
-}
 .numRes{
     margin-left: 10rem;
     width:fit-content;

@@ -63,10 +63,6 @@ function Buscar({ varGlobales, setVarGlobales }) {
   
         <Aside />
 
-        <div className={style.contenedor_imagen}>
-          <img src={fondo} alt="" width={"100%"} height={"100%"} />
-        </div>
-
         <div className={style.buscar}>
           <input
             onChange={(e) => {
