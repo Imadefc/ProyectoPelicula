@@ -8,11 +8,52 @@ import { useNavigate } from 'react-router-dom';
 function UsuariosPrincipio() {
   const [control, setControl] = useState(false);
   const [mostrarAudio, setMostrarAudio] = useState(false);
+  const [imagenes, setImagenes] = useState([]);
+  const [formData, setFormData] = useState({
+    nombre: '',
+    icono: '',
+    adult: false,
+    idioma: 'Español'
+  });
+
   const navigate = useNavigate();
 
   const handleImagenClick = () => {
     setMostrarAudio(true);
     navigate('/home');
+  };
+
+  const handleChange = (e) => {
+    const { id, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [id]: type === 'checkbox' ? checked : value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const nuevaImagen = {
+      nombre: formData.nombre,
+      icono: formData.icono,
+      adult: formData.adult,
+      idioma: formData.idioma
+    };
+    setImagenes([...imagenes, nuevaImagen]);
+    setFormData({ nombre: '', icono: '', adult: false, idioma: 'Español' }); // Limpia el formulario
+    setControl(false); 
+  };
+
+  const handleFileChange = (e) => {
+    setFormData({
+      ...formData,
+      icono: URL.createObjectURL(e.target.files[0])
+    });
+  };
+
+  const toggleControl = () => {
+    setFormData({ nombre: '', icono: '', adult: false, idioma: 'Español' }); // Limpia el formulario
+    setControl(!control);
   };
 
   return (
@@ -21,48 +62,74 @@ function UsuariosPrincipio() {
         <ImagenEntrada 
           imagen="https://ik.imagekit.io/storybird/images/9482cd33-d230-47a6-9dac-41bb43c9dc06/1_123261633.png" 
           onClick={handleImagenClick}
+          nombre="Perfil Ejemplo"
         />
-        <ImagenEntrada 
-          imagen="https://i.pinimg.com/236x/9f/1b/3d/9f1b3d5310f404f2322d87eab2ef472f.jpg" 
-          onClick={handleImagenClick}
-        />
-        <AñadirFotoEntrada control={control} setControl={setControl} />
+        {imagenes.map((imagen, index) => (
+          <ImagenEntrada 
+            key={index}
+            imagen={imagen.icono}
+            onClick={handleImagenClick}
+            nombre={imagen.nombre}
+          />
+        ))}
+     
+        <AñadirFotoEntrada control={control} setControl={toggleControl} />
 
-        {control && <div className={style.divContenedorFormulario} onClick={() => setControl(!control)}>
+        {control && <div className={style.divContenedorFormulario} onClick={toggleControl}>
         </div>}
 
         {control && <article className={style.fondoContenedorFormulario} >
           <section className={style.contenedorFormularioPrincipio}>
             <div className={style.contenedorCerrar}>
-              <img className={style.imgCerrar} onClick={() => setControl(!control)} src='https://i.ibb.co/GJVcntQ/cerrar.png'>
+              <img className={style.imgCerrar} onClick={toggleControl} src='https://i.ibb.co/GJVcntQ/cerrar.png'>
               </img>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className={style.contenedorParametro}>
                 <label htmlFor='nombre' >
                   Nombre:
                 </label>
-                <input id='nombre' type='text' style={{borderRadius:'10px', alignItems: 'center', textAlign: 'center', display: 'flex', justifyContent:'center', height:'35px', width:'300px'}}>
-                </input>
+                <input 
+                  id='nombre' 
+                  type='text' 
+                  value={formData.nombre} 
+                  onChange={handleChange} 
+                  style={{borderRadius:'10px', alignItems: 'center', textAlign: 'center', display: 'flex', justifyContent:'center', height:'35px', width:'300px'}}
+                />
               </div>
               <div className={style.contenedorParametro}>
                 <label htmlFor='icono' style={{display:'flex'}} >
                   Icono:
                 </label>
-                <input id='icono' type='file' style={{ alignItems: 'center', textAlign: 'center', display: 'flex', justifyContent:'center'}}>
-                </input>
+                <input 
+                  id='icono' 
+                  type='file' 
+                  onChange={handleFileChange} 
+                  style={{ alignItems: 'center', textAlign: 'center', display: 'flex', justifyContent:'center'}}
+                />
               </div>
               <div className={style.contenedorParametro}>
                 <label htmlFor='adult'>
                   Contenido adulto:
                 </label>
-                <input id='adult' type='checkbox' style={{height:'35px'}}></input>
+                <input 
+                  id='adult' 
+                  type='checkbox' 
+                  checked={formData.adult} 
+                  onChange={handleChange} 
+                  style={{height:'35px'}}
+                />
               </div>
               <div className={style.contenedorParametro}>
                 <label htmlFor='idioma'>
                   Idioma:
                 </label>
-                <select id='idioma' style={{borderRadius:'10px', alignItems: 'center', textAlign: 'center', display: 'flex', justifyContent:'center', height:'35px'}}>
+                <select 
+                  id='idioma' 
+                  value={formData.idioma} 
+                  onChange={handleChange} 
+                  style={{borderRadius:'10px', alignItems: 'center', textAlign: 'center', display: 'flex', justifyContent:'center', height:'35px'}}
+                >
                   <option>Español</option>
                   <option>Inglés</option>
                   <option>Francés</option>
@@ -75,7 +142,6 @@ function UsuariosPrincipio() {
           </section>
         </article>}
         
-        {mostrarAudio && <Audio />}
       </main>
     </>
   );

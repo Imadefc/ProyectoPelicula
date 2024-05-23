@@ -1,13 +1,19 @@
-import React, { createContext, useState, useEffect, useRef, useContext } from 'react';
+import React, {
+  createContext,
+  useState,
+  useEffect,
+  useRef,
+  useContext,
+} from "react";
 import audioFile from "../assets/audios/deep-strange-whoosh-183845.mp3";
-import '../style/Audio.css'; 
+import "../style/Audio.css";
 
 const AudioContext = createContext();
 
 export const AudioProvider = ({ children }) => {
   const [mensajeBienvenida, setMensajeBienvenida] = useState(true);
-  const [audioMensaje, setAudioMensaje] = useState(true);
-  const audioRef = useRef(new Audio(audioFile)); 
+  const [audioMensaje, setAudioMensaje] = useState(false);
+  const audioRef = useRef(new Audio(audioFile));
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,15 +24,16 @@ export const AudioProvider = ({ children }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    if (audioMensaje) {
+  function playAudio() {
+    if (!audioMensaje) {
       audioRef.current.play();
-      audioRef.current.onended = () => setAudioMensaje(false);
+      audioRef.current.onended = () => setAudioMensaje(true);
+
     }
-  }, [audioMensaje]);
+  }
 
   return (
-    <AudioContext.Provider value={{ mensajeBienvenida }}>
+    <AudioContext.Provider value={{ mensajeBienvenida, playAudio }}>
       {children}
     </AudioContext.Provider>
   );

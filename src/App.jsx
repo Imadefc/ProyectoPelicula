@@ -30,7 +30,6 @@ function App() {
   return (
     <AudioProvider>
       <div className="body_app">
-        
         {selectedMovie && <PerfilPelicula id={selectedMovie} />}
         <Routes>
           <Route

@@ -82,7 +82,7 @@ box-shadow: 0px 4px 34px 3px rgba(1, 251, 251, 0.75);
     position: absolute;
     width: 100vw;
     height: 100vh;
-    filter: blur(1.5rem);
+    background-color: rgba(0, 0, 0, 0.663);
 }
 .contenedorParametro{
     display: flex;
@@ -91,6 +91,7 @@ box-shadow: 0px 4px 34px 3px rgba(1, 251, 251, 0.75);
     text-align: left;
     justify-content: left;
 }
+
 .spanImagentitulo:nth-child(1)::before{
     content: "1";
  

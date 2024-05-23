@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import style from "../styles/Buscar.module.css";
 import CardPelicula from "../components/CardPelicula";
 import Aside from "../components/Aside";
-import Audio from "../components/Audio"; // Importa el componente Audio
 import {
   customHooksHandleAnterior,
   customHooksHandleBuscar,
@@ -11,7 +10,6 @@ import {
 } from "../services/customHooks";
 import Footer from "../components/Footer";
 import Cartelera from "../components/Cartelera";
-import fondo from "../assets/imagenes/ir_solo_al_cinex_razones_por_las_que_deberxas_intentarlox.jpg_1902800913.webp";
 
 const options = {
   method: "GET",
