@@ -43,6 +43,7 @@ box-shadow: 0px 4px 34px 3px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 4px 34px 3px rgba(0, 202, 248, 0.75);
 box-shadow: 0px 4px 34px 3px rgba(1, 251, 251, 0.75);
 }
+
 .iconoMas{
     width: 180px;
     background-color: white;
@@ -58,6 +59,7 @@ box-shadow: 0px 4px 34px 3px rgba(1, 251, 251, 0.75);
     border-radius: 50%;
     overflow: hidden;
     transition: 0.3s;
+    margin-bottom: 60px;
     -webkit-box-shadow: 0px 4px 34px 3px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 4px 34px 3px rgba(0,0,0,0.75);
 box-shadow: 0px 4px 34px 3px rgba(0,0,0,0.75);
@@ -85,12 +87,32 @@ box-shadow: 0px 4px 34px 3px rgba(1, 251, 251, 0.75);
 .contenedorParametro{
     display: flex;
     gap: 5px;
+    align-items: center;
+    text-align: left;
+    justify-content: left;
 }
 .spanImagentitulo:nth-child(1)::before{
     content: "1";
+ 
 }
 .spanImagentitulo::before{
     content: "2";
+ 
+}
+
+h3{
+    color:  rgb(90, 97, 236);
+}
+
+a:hover > h3{
+    color: rgba(8, 8, 22, 1);
+}
+
+a:hover > .contenedor{
+    scale: 1.2;
+    -webkit-box-shadow: 0px 4px 34px 3px rgba(0, 191, 255, 0.75);
+-moz-box-shadow: 0px 4px 34px 3px rgba(0, 202, 248, 0.75);
+box-shadow: 0px 4px 34px 3px rgba(1, 251, 251, 0.75);
 }
 
 a{
@@ -99,17 +121,27 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 }
 .contenedorFormularioPrincipio{
     background-color: #0085ff;
     border-radius: 10px;
     width: 600px;
-    height: 400px;
+    height: 450px;
+    
 }
 form{
-    margin-top: 6rem;
+    margin-top: 1rem;
     margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 25px;
+    align-items: left;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
 }
 .contenedorParametro{
     margin-bottom: 20px;
@@ -120,6 +152,7 @@ form{
 .imgCerrar:hover{
     scale: 1.1;
 }
+
 .contenedorCerrar{
     margin: 10px;
     display: flex;
@@ -131,6 +164,7 @@ form{
     border: none; 
     color: black; 
     padding: 14px 28px; 
+    width: min-content;
     cursor: pointer; 
     border-radius: 5px; 
     background-color: white; border: 2px solid #007bff;

@@ -30,7 +30,7 @@ function App() {
   return (
     <AudioProvider>
       <div className="body_app">
-        <Audio />
+        
         {selectedMovie && <PerfilPelicula id={selectedMovie} />}
         <Routes>
           <Route
@@ -45,7 +45,7 @@ function App() {
             path="home"
             element={
               <Layout>
-              
+                <Audio />
                 <Buscar />
               </Layout>
             }

@@ -42,27 +42,27 @@ function UsuariosPrincipio() {
                 <label htmlFor='nombre' >
                   Nombre:
                 </label>
-                <input id='nombre' type='text'>
+                <input id='nombre' type='text' style={{borderRadius:'10px', alignItems: 'center', textAlign: 'center', display: 'flex', justifyContent:'center', height:'35px', width:'300px'}}>
                 </input>
               </div>
               <div className={style.contenedorParametro}>
-                <label htmlFor='icono'>
+                <label htmlFor='icono' style={{display:'flex'}} >
                   Icono:
                 </label>
-                <input id='icono' type='file'>
+                <input id='icono' type='file' style={{ alignItems: 'center', textAlign: 'center', display: 'flex', justifyContent:'center'}}>
                 </input>
               </div>
               <div className={style.contenedorParametro}>
                 <label htmlFor='adult'>
                   Contenido adulto:
                 </label>
-                <input id='adult' type='checkbox'></input>
+                <input id='adult' type='checkbox' style={{height:'35px'}}></input>
               </div>
               <div className={style.contenedorParametro}>
                 <label htmlFor='idioma'>
                   Idioma:
                 </label>
-                <select id='idioma'>
+                <select id='idioma' style={{borderRadius:'10px', alignItems: 'center', textAlign: 'center', display: 'flex', justifyContent:'center', height:'35px'}}>
                   <option>Español</option>
                   <option>Inglés</option>
                   <option>Francés</option>
