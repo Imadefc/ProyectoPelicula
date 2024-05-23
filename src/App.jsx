@@ -15,6 +15,8 @@ import PerfilPelicula from "./components/PerfilPelicula";
 import { Layout } from "./Layout";
 import { AudioProvider } from "./context/AudioContext";
 import Audio from "./components/Audio"; 
+import UsuariosPrincipio from "./pages/UsuariosPrincipio";
+import { LiaYahoo } from "react-icons/lia";
 
 function App() {
   const [ajustes, setAjustes] = useState({
@@ -28,7 +30,6 @@ function App() {
   return (
     <AudioProvider>
       <div className="body_app">
-        <Audio />
         {selectedMovie && <PerfilPelicula id={selectedMovie} />}
         <Routes>
           <Route
@@ -39,6 +40,13 @@ function App() {
               </Layout>
             }
           />
+          <Route path="home"
+        element={
+          <Layout>
+            <Audio />
+            <Buscar />
+          </Layout>
+        }/>
           <Route
             path="listas"
             element={
@@ -48,18 +56,18 @@ function App() {
             }
           />
           <Route
+          path="/"
+          element={
+            <Layout>
+              <UsuariosPrincipio/>
+            </Layout>
+          }
+          />
+          <Route
             path="popular"
             element={
               <Layout>
                 <Popular />
-              </Layout>
-            }
-          />
-          <Route
-            path="/"
-            element={
-              <Layout>
-                <Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />
               </Layout>
             }
           />
@@ -91,5 +99,4 @@ function App() {
     </AudioProvider>
   );
 }
-
 export default App;

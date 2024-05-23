@@ -31,7 +31,7 @@ function Aside() {
         {mensajeBienvenida && <div className={style.mensaje}></div>}
         <h1 className={style.titulo}>CineSearch</h1>
         <div className={style.opciones}>
-          <NavLink className={style.nav} to={"/"}>
+          <NavLink className={style.nav} to={"/home"}>
             <h3 className={style.links}>Buscar</h3>
           </NavLink>
           <NavLink className={style.nav} to={"/popular"}>
