@@ -15,6 +15,7 @@ import PerfilPelicula from "./components/PerfilPelicula";
 import { Layout } from "./Layout";
 import UsuariosPrincipio from "./pages/UsuariosPrincipio";
 import Audio from "./components/Audio";
+import { LiaYahoo } from "react-icons/lia";
 
 function App() {
   const [ajustes, setAjustes] = useState({
@@ -27,74 +28,12 @@ function App() {
 
   return (
     <>
-      {selectedMovie && <PerfilPelicula id={selectedMovie} />}
-
-      <Routes>
-        <Route
-          path="ajustes"
-          element={
-            <Layout>
-              <Ajustes />
-            </Layout>
-          }
-        />
-        <Route
-          path="listas"
-          element={
-            <Layout>
-              <Listas />
-            </Layout>
-          }
-        />
-        <Route
-          path="popular"
-          element={
-            <Layout>
-              <Popular />
-            </Layout>
-          }
-        />
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <UsuariosPrincipio/>
-            </Layout>
-          }
-        />
-        <Route
-          path="contacto"
-          element={
-            <Layout>
-              <Contactos />
-            </Layout>
-          }
-        />
-        <Route path="home"
-        element={
-          <Layout>
-            <Buscar />
-          </Layout>
-        }/>
-        <Route path="*" element={<Footer />} />
-        {opciones.map((opcion, index) => (
-          <Route
-            key={index}
-            path={"/" + opcion.name.toLowerCase()}
-            element={<OpcionesView {...opcion} />}
-          />
-        ))}
-        {opcionesI.map((opcionI, indexI) => (
-          <Route
-            key={indexI}
-            path={"/" + opcionI.nameI.toLowerCase()}
-            element={<OpcionesIviews {...opcionI} />}
-          />
-        ))}
-      </Routes>
+      
+        
+        
       <div className="body_app">
         {selectedMovie && <PerfilPelicula id={selectedMovie} />}
-        <Audio />
+        
         <Routes>
           <Route
             path="ajustes"
@@ -104,6 +43,13 @@ function App() {
               </Layout>
             }
           />
+          <Route path="home"
+        element={
+          <Layout>
+            <Audio />
+            <Buscar />
+          </Layout>
+        }/>
           <Route
             path="listas"
             element={
@@ -111,6 +57,14 @@ function App() {
                 <Listas />
               </Layout>
             }
+          />
+          <Route
+          path="/"
+          element={
+            <Layout>
+              <UsuariosPrincipio/>
+            </Layout>
+          }
           />
           <Route
             path="popular"
@@ -128,7 +82,7 @@ function App() {
               </Layout>
             }
           />
-          
+          <Route path="*" element={<Footer />} />
           {opciones.map((opcion, index) => (
             <Route
               key={index}
