@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from "../styles/Buscar.module.css";
 import CardPelicula from "../components/CardPelicula";
 import Aside from "../components/Aside";

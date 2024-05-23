@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router";
 import Listas from "../src/pages/Listas";
 import Buscar from "./pages/Buscar";
 import Popular from "./pages/Popular";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import Footer from "./components/Footer";
 import { opciones } from "./services/opciones";
 import OpcionesView from "./pages/OpcionesViews";
@@ -14,7 +14,7 @@ import Ajustes from "./pages/Ajustes";
 import PerfilPelicula from "./components/PerfilPelicula";
 import { Layout } from "./Layout";
 import { AudioProvider } from "./context/AudioContext";
-import Audio from "./components/Audio"; 
+import Audio from "./components/Audio";
 import UsuariosPrincipio from "./pages/UsuariosPrincipio";
 import { LiaYahoo } from "react-icons/lia";
 
@@ -30,6 +30,7 @@ function App() {
   return (
     <AudioProvider>
       <div className="body_app">
+        <Audio />
         {selectedMovie && <PerfilPelicula id={selectedMovie} />}
         <Routes>
           <Route
@@ -40,13 +41,15 @@ function App() {
               </Layout>
             }
           />
-          <Route path="home"
-        element={
-          <Layout>
-            <Audio />
-            <Buscar />
-          </Layout>
-        }/>
+          <Route
+            path="home"
+            element={
+              <Layout>
+              
+                <Buscar />
+              </Layout>
+            }
+          />
           <Route
             path="listas"
             element={
@@ -56,12 +59,12 @@ function App() {
             }
           />
           <Route
-          path="/"
-          element={
-            <Layout>
-              <UsuariosPrincipio/>
-            </Layout>
-          }
+            path="/"
+            element={
+              <Layout>
+                <UsuariosPrincipio />
+              </Layout>
+            }
           />
           <Route
             path="popular"
@@ -99,4 +102,5 @@ function App() {
     </AudioProvider>
   );
 }
+
 export default App;

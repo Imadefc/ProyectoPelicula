@@ -49,7 +49,7 @@ function OpcionesView({ name, description, listado }) {
         </ul>
       )}
       <div className="volver_atras_opciones">
-        <Link to={"/"} className="link_texto_views">
+        <Link to={"/home"} className="link_texto_views">
           Ir a la pagina principal
         </Link>
       </div>

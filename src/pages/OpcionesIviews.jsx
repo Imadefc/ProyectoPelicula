@@ -20,7 +20,7 @@ function OpcionesIviews({ nameI, imageI, descriptionI, imagen_ejemplo }) {
         </div>
 
         <div className='volver_atras'>
-        <Link to={'/'} className='link_imagenes_views' >Ir a la pagina principal</Link>
+        <Link to={'/home'} className='link_imagenes_views' >Ir a la pagina principal</Link>
         </div>
        
        

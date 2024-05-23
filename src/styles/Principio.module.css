@@ -86,12 +86,13 @@ box-shadow: 0px 4px 34px 3px rgba(1, 251, 251, 0.75);
     display: flex;
     gap: 5px;
 }
-.spanImagentitulo::before{
+.spanImagentitulo:nth-child(1)::before{
     content: "1";
 }
-.spanImagentitulo:last-child::before{
+.spanImagentitulo::before{
     content: "2";
 }
+
 a{
     font-size: 20px;
     text-decoration: none;

@@ -16,9 +16,7 @@ function Aside() {
     toggleTheme();
   }
   function mensajeBienvenidaFuncion(event) {
-    setTimeout(() => {
       setMensajeBienvenida(false);
-    }, 2000);
   }
 
   useEffect(() => {
