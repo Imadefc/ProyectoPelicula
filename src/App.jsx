@@ -13,6 +13,7 @@ import { Idcontext } from "./context/idcontext";
 import Ajustes from "./pages/Ajustes";
 import PerfilPelicula from "./components/PerfilPelicula";
 import { Layout } from "./Layout";
+import UsuariosPrincipio from "./pages/UsuariosPrincipio";
 import Audio from "./components/Audio";
 
 function App() {
@@ -26,6 +27,71 @@ function App() {
 
   return (
     <>
+      {selectedMovie && <PerfilPelicula id={selectedMovie} />}
+
+      <Routes>
+        <Route
+          path="ajustes"
+          element={
+            <Layout>
+              <Ajustes />
+            </Layout>
+          }
+        />
+        <Route
+          path="listas"
+          element={
+            <Layout>
+              <Listas />
+            </Layout>
+          }
+        />
+        <Route
+          path="popular"
+          element={
+            <Layout>
+              <Popular />
+            </Layout>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <UsuariosPrincipio/>
+            </Layout>
+          }
+        />
+        <Route
+          path="contacto"
+          element={
+            <Layout>
+              <Contactos />
+            </Layout>
+          }
+        />
+        <Route path="home"
+        element={
+          <Layout>
+            <Buscar />
+          </Layout>
+        }/>
+        <Route path="*" element={<Footer />} />
+        {opciones.map((opcion, index) => (
+          <Route
+            key={index}
+            path={"/" + opcion.name.toLowerCase()}
+            element={<OpcionesView {...opcion} />}
+          />
+        ))}
+        {opcionesI.map((opcionI, indexI) => (
+          <Route
+            key={indexI}
+            path={"/" + opcionI.nameI.toLowerCase()}
+            element={<OpcionesIviews {...opcionI} />}
+          />
+        ))}
+      </Routes>
       <div className="body_app">
         {selectedMovie && <PerfilPelicula id={selectedMovie} />}
         <Audio />
@@ -55,14 +121,6 @@ function App() {
             }
           />
           <Route
-            path="/"
-            element={
-              <Layout>
-                <Buscar setVarGlobales={setAjustes} varGlobales={ajustes} />
-              </Layout>
-            }
-          />
-          <Route
             path="contacto"
             element={
               <Layout>
@@ -70,7 +128,7 @@ function App() {
               </Layout>
             }
           />
-          <Route path="*" element={<Footer />} />
+          
           {opciones.map((opcion, index) => (
             <Route
               key={index}
@@ -90,5 +148,4 @@ function App() {
     </>
   );
 }
-
 export default App;
