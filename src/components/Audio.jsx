@@ -7,7 +7,7 @@ const Audio = () => {
   useEffect(() => {
     playAudio();
   }, []);
-  
+
   return (
     <>
       {mensajeBienvenida && (

@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import ImagenEntrada from '../components/ImagenEntrada';
 import style from "../styles/Principio.module.css";
 import AñadirFotoEntrada from '../components/AñadirFotoEntrada';
-import Audio from '../components/Audio';
-import { useNavigate } from 'react-router-dom';
+
 
 function UsuariosPrincipio() {
   const [control, setControl] = useState(false);
@@ -15,13 +14,6 @@ function UsuariosPrincipio() {
     adult: false,
     idioma: 'Español'
   });
-
-  const navigate = useNavigate();
-
-  const handleImagenClick = () => {
-    setMostrarAudio(true);
-    navigate('/home');
-  };
 
   const handleChange = (e) => {
     const { id, value, type, checked } = e.target;
@@ -60,15 +52,13 @@ function UsuariosPrincipio() {
     <>
       <main className={style.contenedorPrincipal}>
         <ImagenEntrada 
-          imagen="https://ik.imagekit.io/storybird/images/9482cd33-d230-47a6-9dac-41bb43c9dc06/1_123261633.png" 
-          onClick={handleImagenClick}
+          imagen="https://i.pinimg.com/736x/65/c5/fa/65c5fa28eb1fdd0d92e9c370362f8ccb.jpg" 
           nombre="Perfil Ejemplo"
         />
         {imagenes.map((imagen, index) => (
           <ImagenEntrada 
             key={index}
             imagen={imagen.icono}
-            onClick={handleImagenClick}
             nombre={imagen.nombre}
           />
         ))}

@@ -44,7 +44,7 @@ function App() {
             path="home"
             element={
               <Layout>
-                <Audio />
+               <Audio />
                 <Buscar />
               </Layout>
             }
