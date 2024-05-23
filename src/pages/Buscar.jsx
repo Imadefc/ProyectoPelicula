@@ -60,7 +60,6 @@ function Buscar({ varGlobales, setVarGlobales }) {
   return (
     <>
       <div className="body_buscar">
-  
         <Aside />
    
         <div className={style.buscar}>

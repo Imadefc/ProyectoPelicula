@@ -13,7 +13,8 @@ import { Idcontext } from "./context/idcontext";
 import Ajustes from "./pages/Ajustes";
 import PerfilPelicula from "./components/PerfilPelicula";
 import { Layout } from "./Layout";
-import Audio from "./components/Audio";
+import { AudioProvider } from "./context/AudioContext";
+import Audio from "./components/Audio"; 
 
 function App() {
   const [ajustes, setAjustes] = useState({
@@ -25,10 +26,10 @@ function App() {
   const { selectedMovie } = useContext(Idcontext);
 
   return (
-    <>
+    <AudioProvider>
       <div className="body_app">
-        {selectedMovie && <PerfilPelicula id={selectedMovie} />}
         <Audio />
+        {selectedMovie && <PerfilPelicula id={selectedMovie} />}
         <Routes>
           <Route
             path="ajustes"
@@ -87,7 +88,7 @@ function App() {
           ))}
         </Routes>
       </div>
-    </>
+    </AudioProvider>
   );
 }
 
